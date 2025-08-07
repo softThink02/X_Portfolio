@@ -5,7 +5,17 @@ export const navItems = [
   { name: "Contact", link: "#contact" },
 ];
 
-export const gridItems = [
+type gridItemsType = {
+  id: number;
+  title: string;
+  description: string;
+  className: string;
+  imgClassName: string;
+  titleClassName: string;
+  img: string;
+  spareImg: string;
+};
+export const gridItems : gridItemsType[] = [
   {
     id: 1,
     title: "I prioritize client collaboration, fostering open communication ",
@@ -46,7 +56,6 @@ export const gridItems = [
     img: "/grid.svg",
     spareImg: "/b4.svg",
   },
-
   {
     id: 5,
     title: "Currently building a JS Animation library",
