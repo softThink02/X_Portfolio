@@ -58,7 +58,7 @@ export const gridItems : gridItemsType[] = [
   },
   {
     id: 5,
-    title: "Currently building a JS Animation library",
+    title: "Currently building a Project Skill finder",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -116,33 +116,21 @@ export const projects = [
 export const testimonials = [
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Working with Xthink has been a defining asset to our team. He brings a rare mix of technical precision, initiative, and leadership that sets the tone for excellence. Whether tackling complex bugs or leading feature rollouts, Xthink approaches every challenge with clarity and focus. His reliability and ability to consistently deliver high-quality code under tight timelines made him someone I could always count on. He doesn’t just execute — he elevates the entire team.",
+    name: "Solomon Odafe",
+    title: "Director of CompassTechnology174",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Collaborating with Xthink on the Animax project was genuinely energizing. His depth of knowledge across both frontend and backend made our workflows seamless. What stood out most was his ability to communicate ideas clearly, debug collaboratively, and write clean, scalable code that made integration painless. Beyond his technical prowess, Xthink fosters a no-ego, get-things-done atmosphere that makes working with him feel more like creative synergy than just task execution.",
+    name: "Mustafa Balogun",
+    title: "Backend Software Developer",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Hiring Xthink for the Skill Finder platform was one of the best decisions I made. From the first call to final deployment, he was incredibly professional, transparent, and committed to delivering beyond expectations. He understood the business goals, translated them into intuitive user flows, and built a product that’s not only functional but polished. Working with Xthink felt like having a co-founder, not just a freelancer.",
+    name: "Paul Chibueze",
+    title: "Techpreneur",
   },
 ];
 
