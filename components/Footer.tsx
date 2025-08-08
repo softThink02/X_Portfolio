@@ -29,14 +29,11 @@ const Footer = () => {
           presence to new heights?
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Get in touch with me today and let's discuss how I can help you
+          Get in touch with me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
 
-        <div
-          onClick={openGmailCompose}
-          className="cursor-pointer"
-        >
+        <div onClick={openGmailCompose} className="cursor-pointer">
           <MagicButton
             title="Let’s connect"
             icon={<FaLocationArrow />}
