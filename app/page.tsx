@@ -1,7 +1,5 @@
 "use client";
 
-import { navItems } from "@/data";
-
 import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
 import Footer from "@/components/Footer";
@@ -10,6 +8,18 @@ import Approach from "@/components/Approach";
 import Experience from "@/components/Experience";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
+
+import { PiCertificateLight } from "react-icons/pi";
+import { LuContactRound } from "react-icons/lu";
+import { MdOutlineTaskAlt } from "react-icons/md";
+import { CiSquareInfo } from "react-icons/ci";
+
+const navItems = [
+  { title: "About", href: "#about", icon: <CiSquareInfo /> },
+  { title: "Projects", href: "#projects", icon: <MdOutlineTaskAlt /> },
+  { title: "Testimonials", href: "#testimonials", icon: <PiCertificateLight /> },
+  { title: "Contact", href: "#contact", icon: <LuContactRound /> },
+];
 
 const Home = () => {
   return (
