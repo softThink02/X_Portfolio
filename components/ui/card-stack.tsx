@@ -5,10 +5,11 @@ import { motion } from "motion/react";
 let interval: any;
 
 type Card = {
-  id: number;
   name: string;
-  designation: string;
-  content: string;
+  title: string;
+  quote: string;
+  img?: string;
+  iosQuote : string;
 };
 
 export const CardStack = ({
@@ -40,12 +41,12 @@ export const CardStack = ({
   };
 
   return (
-    <div className="relative  h-60 w-60 md:h-60 md:w-96">
-      {cards.map((card, index) => {
+    <div className="relative h-60 w-60 md:h-60 md:w-96">
+      {cards.map((item, index) => {
         return (
           <motion.div
-            key={card.id}
-            className="absolute dark:bg-black bg-white h-60 w-60 md:h-60 md:w-96 rounded-3xl p-4 shadow-xl border border-neutral-200 dark:border-white/[0.1]  shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between"
+            key={index}
+            className="absolute dark:bg-black bg-white h-60 w-80 md:h-60 md:w-96 rounded-3xl p-4 shadow-xl border border-neutral-200 dark:border-white/[0.1]  shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between"
             style={{
               transformOrigin: "top center",
             }}
@@ -55,17 +56,32 @@ export const CardStack = ({
               zIndex: cards.length - index,
             }}
           >
-            <div className="font-normal text-neutral-700 dark:text-neutral-200">
-              {card.content}
-            </div>
-            <div>
-              <p className="text-neutral-500 font-medium dark:text-white">
-                {card.name}
-              </p>
-              <p className="text-neutral-400 font-normal dark:text-neutral-200">
-                {card.designation}
-              </p>
-            </div>
+            <blockquote>
+              <div
+                aria-hidden="true"
+                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+              ></div>
+              <span className=" relative z-20 text-[12px] leading-[1.2] text-white font-normal">
+                {item.iosQuote}
+              </span>
+              <div className="absolute z-20 bottom-6 flex flex-row items-center">
+                <div className="me-3 rounded-full">
+                  <img
+                    src={item.img || "/profile.svg"}
+                    alt="profile"
+                    className="rounded-full w-12 h-12"
+                  />
+                </div>
+                <span className="flex flex-col gap-1">
+                  <span className="text-[16px] font-bold leading-[1.2] text-white">
+                    {item.name}
+                  </span>
+                  <span className=" text-sm leading-[1.2] text-white-200 font-normal">
+                    {item.title.substring(0, 24)}
+                  </span>
+                </span>
+              </div>
+            </blockquote>
           </motion.div>
         );
       })}
