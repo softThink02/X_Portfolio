@@ -127,7 +127,6 @@ function IconContainer({
     return val - bounds.x - bounds.width / 2;
   });
 
-  // Less aggressive hover growth
   let widthTransform = useTransform(distance, [-150, 0, 150], [40, 60, 40]);
   let heightTransform = useTransform(distance, [-150, 0, 150], [40, 60, 40]);
 

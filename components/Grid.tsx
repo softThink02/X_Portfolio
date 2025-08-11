@@ -4,8 +4,7 @@ import {HoverEffect} from './ui/card-hover-effect'
 const Grid = () => {
   return (
     <section id="about">
-      <HoverEffect items={gridItems} >
-      </HoverEffect>
+      <HoverEffect items={gridItems} />
     </section>
   );
 };
