@@ -1,7 +1,13 @@
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "motion/react";
-
+import { AnimatePresence, motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import { CardDemo } from "./CardDemo";
 import { useState } from "react";
+import animationData from "@/data/confetti.json"
+import { IoCopyOutline } from "react-icons/io5";
+import MagicButton from "../MagicButton";
+
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
 export const HoverEffect = ({
   items,
@@ -10,37 +16,50 @@ export const HoverEffect = ({
   items: {
     title: string;
     description: string;
-    link: string;
+    InitBg?: string;
+    hoverBg?: string;
+    hasEmail?: boolean;
   }[];
   className?: string;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const defaultOptions = {
+    loop: copied,
+    autoplay: copied,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const handleCopy = () => {
+    const text = "softthink02@gmail.com";
+    navigator.clipboard.writeText(text).then(() => setCopied(true));
+  };
 
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
         className
       )}
     >
       {items.map((item, idx) => (
-        <a
-          href={item?.link}
-          key={item?.link}
-          className="relative group  block p-2 h-full w-full"
+        <div
+          key={item?.title}
+          className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
-                }}
+                animate={{ opacity: 1, transition: { duration: 0.15 } }}
                 exit={{
                   opacity: 0,
                   transition: { duration: 0.15, delay: 0.2 },
@@ -48,11 +67,50 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
+
           <Card>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
+            {item.hoverBg && item.InitBg ? (
+              <CardDemo
+                header={item.title}
+                description={item.description}
+                initialBg={item?.InitBg}
+                hoverBg={item.hoverBg}
+              />
+            ) : (
+              <div className="relative">
+                <CardTitle>{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+                {item.hasEmail && (
+                  <div className="relative">
+                    <div
+                      className={`absolute -bottom-5 right-0 ${
+                        copied ? "block" : "block"
+                      }`}
+                    >
+                      {copied && animationData && (
+                        <Lottie
+                          options={defaultOptions}
+                          height={200}
+                          width={400}
+                        />
+                      )}
+                    </div>
+
+                    <MagicButton
+                      title={
+                        copied ? "Email is Copied!" : "Copy my email address"
+                      }
+                      icon={<IoCopyOutline />}
+                      position="left"
+                      handleClick={handleCopy}
+                      otherClasses="!bg-[#161A31]"
+                    />
+                  </div>
+                )}
+              </div>
+            )}
           </Card>
-        </a>
+        </div>
       ))}
     </div>
   );
@@ -78,6 +136,7 @@ export const Card = ({
     </div>
   );
 };
+
 export const CardTitle = ({
   className,
   children,
@@ -85,12 +144,15 @@ export const CardTitle = ({
   className?: string;
   children: React.ReactNode;
 }) => {
-  return (
+  return typeof children === "string" ? (
     <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
       {children}
     </h4>
+  ) : (
+    <div>{children}</div>
   );
 };
+
 export const CardDescription = ({
   className,
   children,

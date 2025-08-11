@@ -2,74 +2,69 @@
 type gridItemsType = {
   title: string;
   description: string;
-  link: string;
+  InitBg?: string;
+  hoverBg?: string;
+  hasEmail? : boolean
 };
 export const gridItems: gridItemsType[] = [
   {
     title: "I prioritize client collaboration, fostering open communication ",
     description: "",
-    link: "",
+    InitBg: "/collab.jpg",
+    hoverBg: "/team.jpg",
   },
   {
-    title: "I adapt easily, ensuring smooth collaboration.",
+    title: "Interned at Zuri, Genesys; built Animax, honed skills.",
     description: "",
-    link: "",
+    InitBg: "/upskill.jpg",
+    hoverBg: "/zuri.jpg",
   },
   {
     title: "My tech stack",
-    description: "I constantly try to improve",
-    link: "",
+    description: "Frontend",
+    InitBg: "/next.jpg",
+    hoverBg: "/nuxt.jpg",
   },
   {
     title: "Tech enthusiast with a passion for development.",
     description: "",
-    link: "",
   },
   {
-    title: "Currently building a Project Skill finder",
-    description: "The Inside Scoop",
-    link: "",
+    title: "Currently building a Project",
+    description: "Skill finder",
   },
   {
     title: "Do you want to start a project together?",
     description: "",
-    link: "",
+    hasEmail : true
   },
 ];
 
 export const projects = [
   {
     id: 1,
-    title: "GIOS E-commerce website",
-    des: "Modern, user-friendly online platform designed to offer a seamless shopping experience across a wide range of products.",
-    img: "/gios.jpg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
-    link: "https://gios-client.vercel.app/dashboard",
-  },
-  {
-    id: 2,
-    title: "Ministry of Foreign Affairs (MFA) ",
-    des: "MFA serves as the official digital gateway to a nation’s foreign policy, diplomatic missions, and international relations. It provides up-to-date information on foreign policy objectives, consular services, visa and passport guidelines, international agreements, press releases, and official statements.",
+    title: "MFA",
+    des: "Ministry of Foreign Affairs serves as the official digital gateway to a nation’s foreign policy, diplomatic missions, and international relations. It provides up-to-date information on foreign policy objectives, consular services, visa and passport guidelines, international agreements, press releases, and official statements.",
     img: "/mfa.jpg",
     iconLists: ["/next.svg", "/ts.svg", "/stream.svg", "/c.svg"],
     link: "https://mfawebsite-psi.vercel.app",
   },
   {
-    id: 3,
-    title: "Xarme (mini telegram)",
-    des: "Xarme is a lightweight, real-time messaging platform inspired by Telegram — built for fast, secure, and seamless communication. Whether you're chatting one-on-one, creating group conversations, or sharing media, Xarme delivers an intuitive interface and end-to-end encrypted messaging with minimal overhead.",
+    id: 2,
+    title: "Xarme",
+    des: "Xarme (mini telegram) is a lightweight, real-time messaging platform inspired by Telegram — built for fast, secure, and seamless communication. Whether you're chatting one-on-one, creating group conversations, or sharing media, Xarme delivers an intuitive interface and end-to-end encrypted messaging with minimal overhead.",
     img: "/xarme.jpg",
     iconLists: ["/next.svg", "/re.svg", "/ts.svg", "/three.svg"],
     link: "https://xarme-frontend.vercel.app/twitter%60",
   },
   {
-    id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
-  },
+    id: 3,
+    title: "GIOS",
+    des: "Modern, user-friendly online platform designed to offer a seamless shopping experience across a wide range of products.",
+    img: "/gios.jpg",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
+    link: "https://gios-client.vercel.app/dashboard",
+  }
 ];
 
 export const testimonials = [
@@ -96,38 +91,6 @@ export const testimonials = [
   },
 ];
 
-export const companies = [
-  {
-    id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
-  },
-  {
-    id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
-  },
-  {
-    id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
-  },
-  {
-    id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
-  },
-  {
-    id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
-  },
-];
 
 export const workExperience = [
   {
