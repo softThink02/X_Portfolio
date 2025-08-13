@@ -8,7 +8,7 @@ import Experience from "@/components/Experience";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 
-import { PiCertificateLight } from "react-icons/pi";
+// import { PiCertificateLight } from "react-icons/pi";
 import { LuContactRound } from "react-icons/lu";
 import { MdOutlineTaskAlt } from "react-icons/md";
 import { CiSquareInfo } from "react-icons/ci";
@@ -16,7 +16,7 @@ import { CiSquareInfo } from "react-icons/ci";
 const navItems = [
   { title: "About", href: "#about", icon: <CiSquareInfo /> },
   { title: "Projects", href: "#projects", icon: <MdOutlineTaskAlt /> },
-  { title: "Testimonials", href: "#testimonials", icon: <PiCertificateLight /> },
+  // { title: "Testimonials", href: "#testimonials", icon: <PiCertificateLight /> },
   { title: "Contact", href: "#contact", icon: <LuContactRound /> },
 ];
 
