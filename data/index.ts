@@ -21,7 +21,7 @@ export const gridItems: gridItemsType[] = [
   },
   {
     title: "My tech stack",
-    description: "Frontend",
+    description: "Reactjs (NextJs), Vuejs (Nuxtjs)",
     InitBg: "/next.jpg",
     hoverBg: "/nuxt.jpg",
   },
@@ -31,7 +31,7 @@ export const gridItems: gridItemsType[] = [
   },
   {
     title: "Currently building a Project",
-    description: "Skill finder",
+    description: "Skill finder with Nuxtjs (VueJs)",
   },
   {
     title: "Do you want to start a project together?",
