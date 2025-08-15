@@ -58,30 +58,18 @@ export const Skeleton = ({arr} : {arr : string[]}) => {
     });
   }, []);
   return (
-    <div className="p-8 overflow-hidden h-full relative flex items-center justify-center">
-      <div className="flex flex-row shrink-0 justify-center items-center gap-2">
+    <div className="overflow-hidden h-full relative flex items-center justify-center">
+      <div className="flex flex-row shrink-0 justify-center items-center">
         {arr.map((icon, index) => {
           return (
-            <Container key={index} className="h-8 w-8 circle-1">
+            <Container
+              key={index}
+              className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+            >
               <img src={icon} alt="icon" className="h-6 w-6" />
             </Container>
           );
         })}
-        {/* <Container className="h-8 w-8 circle-1">
-          <ClaudeLogo className="h-4 w-4 " />
-        </Container>
-        <Container className="h-12 w-12 circle-2">
-          <GoCopilot className="h-6 w-6 dark:text-white" />
-        </Container>
-        <Container className="circle-3">
-          <OpenAILogo className="h-8 w-8 dark:text-white" />
-        </Container>
-        <Container className="h-12 w-12 circle-4">
-          <MetaIconOutline className="h-6 w-6 " />
-        </Container>
-        <Container className="h-8 w-8 circle-5">
-          <GeminiLogo className="h-4 w-4 " />
-        </Container> */}
       </div>
 
       <div className="h-40 w-px absolute top-20 m-auto z-40 bg-gradient-to-b from-transparent via-cyan-500 to-transparent animate-move">
