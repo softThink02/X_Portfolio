@@ -4,6 +4,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
+import { CardSkeletonContainer, Skeleton } from "./ui/icon-display";
 
 const RecentProjects = () => {
   return (
@@ -47,18 +48,10 @@ const RecentProjects = () => {
               </p>
 
               <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
-                  {item.iconLists.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
-                      }}
-                    >
-                      <img src={icon} alt="icon5" className="p-2" />
-                    </div>
-                  ))}
+                <div className="flex border-2 relative items-center">
+                  <CardSkeletonContainer>
+                    <Skeleton arr={item.iconLists} />
+                  </CardSkeletonContainer>
                 </div>
 
                 <div className="flex justify-center items-center">
