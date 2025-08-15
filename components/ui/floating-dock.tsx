@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import {
@@ -9,6 +11,7 @@ import {
   useTransform,
 } from "motion/react";
 import { useRef, useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
 
 export const FloatingDock = ({
   items,
@@ -35,6 +38,18 @@ const FloatingDockMobile = ({
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleScroll = (targetId: string) => {
+    const el = document.getElementById(targetId);
+    if (el) {
+      const offset = el.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: offset, behavior: "smooth" });
+      router.replace(pathname);
+    }
+    setOpen(false);
+  };
 
   return (
     <div className={cn("relative block md:hidden", className)}>
@@ -45,8 +60,6 @@ const FloatingDockMobile = ({
         >
           <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
         </button>
-
-        {/* Horizontal menu opening RIGHT */}
         <AnimatePresence>
           {open && (
             <motion.div
@@ -69,12 +82,12 @@ const FloatingDockMobile = ({
                   }}
                   transition={{ delay: idx * 0.05 }}
                 >
-                  <a
-                    href={item.href}
+                  <button
+                    onClick={() => handleScroll(item.href.replace("#", ""))}
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
                   >
                     <div className="h-4 w-4">{item.icon}</div>
-                  </a>
+                  </button>
                 </motion.div>
               ))}
             </motion.div>
@@ -120,7 +133,9 @@ function IconContainer({
   icon: React.ReactNode;
   href: string;
 }) {
-  let ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+  const pathname = usePathname();
 
   let distance = useTransform(mouseX, (val) => {
     let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -129,7 +144,6 @@ function IconContainer({
 
   let widthTransform = useTransform(distance, [-150, 0, 150], [40, 60, 40]);
   let heightTransform = useTransform(distance, [-150, 0, 150], [40, 60, 40]);
-
   let widthTransformIcon = useTransform(distance, [-150, 0, 150], [24, 32, 24]);
   let heightTransformIcon = useTransform(
     distance,
@@ -147,7 +161,6 @@ function IconContainer({
     stiffness: 150,
     damping: 12,
   });
-
   let widthIcon = useSpring(widthTransformIcon, {
     mass: 0.1,
     stiffness: 150,
@@ -161,8 +174,18 @@ function IconContainer({
 
   const [hovered, setHovered] = useState(false);
 
+  const handleScroll = () => {
+    const targetId = href.replace("#", "");
+    const el = document.getElementById(targetId);
+    if (el) {
+      const offset = el.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: offset, behavior: "smooth" });
+      router.replace(pathname);
+    }
+  };
+
   return (
-    <a href={href}>
+    <button onClick={handleScroll}>
       <motion.div
         ref={ref}
         style={{ width, height }}
@@ -189,6 +212,6 @@ function IconContainer({
           {icon}
         </motion.div>
       </motion.div>
-    </a>
+    </button>
   );
 }

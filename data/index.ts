@@ -122,8 +122,8 @@ export const workExperience = [
   // },
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Lead the development of the Ministry of Foreign Affairs (MFA) platform, delivering and maintaining user-facing features using modern frontend technologies.",
+    title: "Frontend Developer",
+    desc: "Development of the Ministry of Foreign Affairs (MFA) platform, delivering and maintaining user-facing features using modern frontend technologies.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
