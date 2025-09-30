@@ -81,40 +81,53 @@ export const Skeleton = ({arr} : {arr : string[]}) => {
   );
 };
 const Sparkles = () => {
-  const randomMove = () => Math.random() * 2 - 1;
-  const randomOpacity = () => Math.random();
-  const random = () => Math.random();
+  const [stars, setStars] = React.useState<
+    { top: string; left: string; opacity: number; duration: number }[]
+  >([]);
+
+  useEffect(() => {
+    const gen = () =>
+      [...Array(12)].map(() => ({
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        opacity: Math.random(),
+        duration: Math.random() * 2 + 4,
+      }));
+    setStars(gen());
+  }, []);
+
   return (
     <div className="absolute inset-0">
-      {[...Array(12)].map((_, i) => (
+      {stars.map((star, i) => (
         <motion.span
           key={`star-${i}`}
           animate={{
-            top: `calc(${random() * 100}% + ${randomMove()}px)`,
-            left: `calc(${random() * 100}% + ${randomMove()}px)`,
-            opacity: randomOpacity(),
+            top: `calc(${star.top} + ${Math.random() * 2 - 1}px)`,
+            left: `calc(${star.left} + ${Math.random() * 2 - 1}px)`,
+            opacity: star.opacity,
             scale: [1, 1.2, 0],
           }}
           transition={{
-            duration: random() * 2 + 4,
+            duration: star.duration,
             repeat: Infinity,
             ease: "linear",
           }}
           style={{
             position: "absolute",
-            top: `${random() * 100}%`,
-            left: `${random() * 100}%`,
-            width: `2px`,
-            height: `2px`,
+            top: star.top,
+            left: star.left,
+            width: "2px",
+            height: "2px",
             borderRadius: "50%",
             zIndex: 1,
           }}
           className="inline-block bg-black dark:bg-white"
-        ></motion.span>
+        />
       ))}
     </div>
   );
 };
+
 
 
 
