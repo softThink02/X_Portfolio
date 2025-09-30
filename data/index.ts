@@ -25,6 +25,9 @@ export const gridItems: gridItemsType[] = [
     InitBg: "/next.jpg",
     hoverBg: "/nuxt.jpg",
   },
+];
+
+{/*
   {
     title: "Tech enthusiast with a passion for development.",
     description: "",
@@ -37,8 +40,7 @@ export const gridItems: gridItemsType[] = [
     title: "Do you want to start a project together?",
     description: "",
     hasEmail : true
-  },
-];
+  },*/}
 
 export const projects = [
   {
