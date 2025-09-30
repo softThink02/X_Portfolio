@@ -8,7 +8,13 @@ type gridItemsType = {
 };
 export const gridItems: gridItemsType[] = [
   {
-    title: "I prioritize client collaboration, fostering open communication ",
+    title: "What I'm up to",
+    description: "Currently building Pozse Fashion webapp with Reactjs (NextJs)",
+    InitBg: "/pozse.png",
+    hoverBg: "/next.jpg",
+  },
+  {
+    title: "I prioritize client collaboration, fostering open communication",
     description: "",
     InitBg: "/collab.jpg",
     hoverBg: "/team.jpg",

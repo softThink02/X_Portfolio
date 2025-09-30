@@ -9,13 +9,13 @@ import { CardSkeletonContainer, Skeleton } from "./ui/icon-display";
 const RecentProjects = () => {
   return (
     <section id="projects" className="py-4 md:py-10">
-      <h1 className="heading">
+      <h1 className="dark:text-white heading text-[20px] text-center md:text-[28px] lg:text-[32px] xl:text-[48px] text-black">
         A brief showcase of <span className="text-purple">recent projects</span>
       </h1>
-      <div className="flex flex-wrap space-y-2 items-center justify-center p-4 md:gap-x-10">
+      <div className="flex flex-wrap space-y-4 items-center justify-center p-4 md:gap-x-10">
         {projects.map((item) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            className="h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={item.id}
           >
             <PinContainer title={item.title} href={item.link}>
