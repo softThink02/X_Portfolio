@@ -8,7 +8,13 @@ type gridItemsType = {
 };
 export const gridItems: gridItemsType[] = [
   {
-    title: "I prioritize client collaboration, fostering open communication ",
+    title: "What I'm up to",
+    description: "Currently building Pozse Fashion webapp with Reactjs (NextJs)",
+    InitBg: "/pozse.png",
+    hoverBg: "/next.jpg",
+  },
+  {
+    title: "I prioritize client collaboration, fostering open communication",
     description: "",
     InitBg: "/collab.jpg",
     hoverBg: "/team.jpg",
@@ -25,6 +31,9 @@ export const gridItems: gridItemsType[] = [
     InitBg: "/next.jpg",
     hoverBg: "/nuxt.jpg",
   },
+];
+
+{/*
   {
     title: "Tech enthusiast with a passion for development.",
     description: "",
@@ -37,8 +46,7 @@ export const gridItems: gridItemsType[] = [
     title: "Do you want to start a project together?",
     description: "",
     hasEmail : true
-  },
-];
+  },*/}
 
 export const projects = [
   {

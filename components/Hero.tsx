@@ -9,9 +9,9 @@ import { motion } from "framer-motion";
 const Hero = () => {
 
   return (
-    <div className="lg:mt-4 border-white-100 border-2">
+    <div className="lg:mt-4">
       <HeroHighlight>
-        <div className="flex justify-center relative my-20 z-10">
+        <div className="flex justify-center relative z-10">
           <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
             <TextGenerateEffect
               words={`Shaping Vision into Flawless User Journeys`}

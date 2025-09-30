@@ -13,16 +13,19 @@ export function CardDemo({
   description : string,
 }) {
   return (
-    <div className="max-w-xs w-full">
+    <div className="w-full">
       <div
         className={cn(
-          "group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800",
+          "group w-full cursor-pointer overflow-hidden relative card lg:h-72 md:h-60 xl:h-96 h-52 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800",
           "bg-cover",
           "hover:after:content-[''] hover:after:absolute hover:after:inset-0 hover:after:bg-black hover:after:opacity-50",
           "transition-all duration-500"
         )}
         style={{
           backgroundImage: `url(${initialBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
         onMouseEnter={(e) =>
           (e.currentTarget.style.backgroundImage = `url(${hoverBg})`)
