@@ -24,7 +24,7 @@ const Footer = () => {
       </div>
 
       <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[50vw]">
+        <h1 className="lg:heading lg:max-w-[50vw] dark:text-white text-center px-2 text-[20px] md:text-[28px] lg:text-[32px] xl:text-[48px] text-black leading-snug tracking-wide">
           Prepared to elevate <span className="text-purple">your</span> digital
           presence to new heights?
         </h1>
@@ -46,7 +46,7 @@ const Footer = () => {
           Copyright © 2025 Oguagu Ekenechukwu David (Xthink)
         </p>
 
-        <div className="flex items-center md:gap-3 gap-6">
+        <div className="flex items-center mt-4 md:mt-0 md:gap-3 gap-6">
           {socialMedia.map((info) => (
             <a
               key={info.id}
