@@ -9,14 +9,14 @@ import { CardSkeletonContainer, Skeleton } from "./ui/icon-display";
 const RecentProjects = () => {
   return (
     <section id="projects" className="py-4 md:py-10">
-      <h1 className="dark:text-white lg:heading text-[20px] text-center md:text-[28px] lg:text-[32px] xl:text-[48px] text-black">
+      <h1 className="dark:text-white lg:heading text-[20px] mb-2 lg:mb-4 text-center md:text-[28px] lg:text-[32px] xl:text-[48px] text-black">
         A brief showcase of <span className="text-purple">recent projects</span>
       </h1>
-      <div className="flex lg:flex-wrap border-2 border-green-200 flex-col lg:flex-row items-center justify-center md:gap-4 lg:gap-6">
+      <div className="flex lg:flex-wrap p-2 flex-col lg:flex-row items-center gap-4 justify-center">
         {projects.map((item) => (
           <div
             key={item.id}
-            className="h-[25rem] md:h-[30rem] lg:h-[38rem] overflow-hidden flex items-center justify-center w-[94%] sm:w-[80%] md:w-[70%] lg:w-[30rem]"
+            className="h-[24rem] md:h-[30rem] lg:h-[36rem] xl:h-[32rem] overflow-hidden flex items-center justify-center w-[94%] md:w-[30rem] lg:w-[28rem]"
           >
             <PinContainer title={item.title} href={item.link}>
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-4">
