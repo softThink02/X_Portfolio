@@ -1,10 +1,10 @@
 import { FaLocationArrow } from "react-icons/fa6";
-
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
+import { motion} from "framer-motion";
+import {FooterHeader} from './shared/animate'
 
 const Footer = () => {
-
   const openGmailCompose = () => {
     const to = "softthink02@gmail.com";
     const subject = encodeURIComponent("Hello — I'd like to connect");
@@ -24,14 +24,17 @@ const Footer = () => {
       </div>
 
       <div className="flex flex-col items-center">
-        <h1 className="lg:heading lg:max-w-[50vw] dark:text-white text-center px-2 text-[20px] md:text-[28px] lg:text-[32px] xl:text-[48px] text-black leading-snug tracking-wide">
+        <FooterHeader variant="h1" className="lg:heading lg:max-w-[50vw] dark:text-white text-center px-[6px] text-[20px] md:text-[28px] lg:text-[32px] xl:text-[48px] text-black leading-snug tracking-wide">
           Prepared to elevate <span className="text-purple">your</span> digital
           presence to new heights?
-        </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
+        </FooterHeader>
+        <FooterHeader
+          variant="p"
+          className="text-white-200 md:mt-10 my-5 text-center px-[6px]"
+        >
           Get in touch with me today and let&apos;s discuss how I can help you
           achieve your goals.
-        </p>
+        </FooterHeader>
 
         <div onClick={openGmailCompose} className="cursor-pointer">
           <MagicButton
