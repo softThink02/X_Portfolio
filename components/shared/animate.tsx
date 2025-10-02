@@ -60,7 +60,7 @@ export const FooterHeader = ({
         exit={{ opacity: 0, x: 100 }}
         transition={{ duration: 0.8 }}
         className={className}
-      ></motion.div>
+      >{children}</motion.div>
     );
   }
 };
