@@ -63,7 +63,7 @@ export const projects = [
     des: "Xarme (mini telegram) is a lightweight, real-time messaging platform inspired by Telegram — built for fast, secure, and seamless communication. Whether you're chatting one-on-one, creating group conversations, or sharing media, Xarme delivers an intuitive interface and end-to-end encrypted messaging with minimal overhead.",
     img: "/xarme.jpg",
     iconLists: ["/next.svg", "/re.svg", "/ts.svg", "/three.svg"],
-    link: "https://xarme-frontend.vercel.app/twitter%60",
+    link: "https://xarme-frontend.vercel.app",
   },
   {
     id: 3,
@@ -72,7 +72,15 @@ export const projects = [
     img: "/gios.jpg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
     link: "https://gios-client.vercel.app/dashboard",
-  }
+  },
+  {
+    id: 4,
+    title: "SKILL FINDER",
+    des: "A web app that helps users quickly discover, match, and connect with skills or experts relevant to their goals.",
+    img: "/skillfinder.png",
+    iconLists: ["/re.svg", "/next.svg", "/ts.svg", "/fm.svg"],
+    link: "http://skill-finder.net/",
+  },
 ];
 
 export const testimonials = [
