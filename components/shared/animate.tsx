@@ -5,8 +5,8 @@ export const FooterHeader = ({
   variant,
   children,
 }: {
-  className: string;
-  variant: "h1" | "p" | "heroDiv" | "heroImg";
+  className?: string;
+  variant: "h1" | "p" | "heroDiv" | "heroImg" | "handSpan";
   children?: React.ReactNode | any;
 }) => {
   if (variant === "h1") {
@@ -60,7 +60,25 @@ export const FooterHeader = ({
         exit={{ opacity: 0, x: 100 }}
         transition={{ duration: 0.8 }}
         className={className}
-      >{children}</motion.div>
+      >
+        {children}
+      </motion.div>
+    );
+  }
+  if (variant === "handSpan") {
+    return (
+      <motion.span
+      className={className}
+        style={{ display: "inline-block", fontSize: "1.4rem" }}
+        animate={{ rotate: [0, 20, -10, 20, 0] }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          repeatType: "loop",
+        }}
+      >
+        {children}
+      </motion.span>
     );
   }
 };

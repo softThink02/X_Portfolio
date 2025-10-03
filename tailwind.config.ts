@@ -26,6 +26,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        nohemi: ["Nohemi", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+      },
       colors: {
         black: {
           DEFAULT: "#000",

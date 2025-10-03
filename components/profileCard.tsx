@@ -4,7 +4,7 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
 import { useEffect, useState } from "react";
-import {FooterHeader} from './shared/animate'
+import { FooterHeader } from "./shared/animate";
 
 export default function ProfileCard() {
   const [showText, setShowText] = useState(true);
@@ -21,24 +21,13 @@ export default function ProfileCard() {
         words={`Shaping Vision into Flawless User Journeys`}
         className="text-center text-[40px] md:text-5xl lg:text-6xl"
       />
-      <div className=" rounded-full relative w-[96px] h-[96px] overflow-hidden mb-6">
+      <div className=" rounded-full relative w-[100px] h-[100px] md:w-[120px] md:h-[120px] lg:w-[140px] lg:h-[140px] xl:h-[200px] xl:w-[200px] overflow-hidden mb-6">
         <Image src="/avatar.jpeg" alt="X Avatar" fill />
       </div>
 
-      <div className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-        Hi{" "}
-        <motion.span
-          style={{ display: "inline-block", fontSize: "1.4rem" }}
-          animate={{ rotate: [0, 20, -10, 20, 0] }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            repeatType: "loop",
-          }}
-        >
-          👋
-        </motion.span>
-        ! I&apos;m Xthink, a ReactJs (NextJs) Frontend Developer.
+      <div className="text-center md:tracking-wider font-poppins mb-4 font-bold text-sm md:text-lg lg:text-2xl">
+        Hi <FooterHeader variant="handSpan">👋</FooterHeader>! I&apos;m Xthink,
+        a ReactJs (NextJs) Frontend Developer.
       </div>
 
       <div className="flex items-center justify-center py-2 gap-4">
@@ -55,9 +44,12 @@ export default function ProfileCard() {
         >
           <AnimatePresence mode="wait">
             {showText ? (
-              <FooterHeader variant="heroDiv" className="absolute inset-0 flex text-[12px] font-bold md:text-[14px] lg:text-[16px] xl:text-[20px] items-center justify-center">
-                <span className="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
-                Available for new project
+              <FooterHeader
+                variant="heroDiv"
+                className="absolute inset-0 flex text-[12px] font-bold md:text-[14px] lg:text-[16px] xl:text-[20px] items-center justify-center"
+              >
+                <span className="w-3 h-3 bg-green-500 font-poppins rounded-full mr-2"></span>
+                Available for new projects
               </FooterHeader>
             ) : (
               <FooterHeader
