@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light">
+        <p className="md:text-base text-[12px] md:text-[14px] font-poppins">
           Copyright © 2025 Oguagu Ekenechukwu David (Xthink)
         </p>
 
