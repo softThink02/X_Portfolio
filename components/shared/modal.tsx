@@ -27,16 +27,17 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/70"
         onClick={onClose}
       ></div>
 
-      <div className="relative z-10 bg-black text-white rounded-xl p-6 shadow-2xl border border-gray-700 w-[90%] max-w-md mx-auto">
+      <div className="relative z-40 bg-[#362d2d] text-white rounded-xl p-6 shadow-2xl border border-gray-700 w-[90%] max-w-md mx-auto">
         <button
           onClick={onClose}
           aria-label="Close modal"
           className="absolute top-3 right-3 p-2 rounded-md hover:bg-white/10 transition"
         >
+          
           <X size={20} />
         </button>
 

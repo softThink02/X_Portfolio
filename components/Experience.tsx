@@ -2,10 +2,34 @@ import React from "react";
 
 import { workExperience } from "@/data";
 import { Button } from "./ui/MovingBorders";
+import Modal from "./shared/modal";
+import { useState, useRef, useEffect } from "react";
 
 const Experience = () => {
+
+   const sectionRef = useRef<HTMLDivElement | null>(null);
+    const [showModal, setShowModal] = useState(false);
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          if (entry.isIntersecting) {
+            setShowModal(true);
+          }
+        },
+        { threshold: 0.5 }
+      );
+  
+      if (sectionRef.current) observer.observe(sectionRef.current);
+      return () => observer.disconnect();
+    }, []);
+
   return (
-    <div className="py-10 px-2 w-full">
+    <section id="experience" ref={sectionRef} className="py-10 px-2 w-full">
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+        <div>Copy My Email </div>
+      </Modal>
       <h1 className="dark:text-white lg:heading text-[20px] text-center md:text-[28px] lg:text-[32px] xl:text-[48px] text-black">
         My <span className="text-purple">work experience</span>
       </h1>
@@ -42,7 +66,7 @@ const Experience = () => {
           </Button>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

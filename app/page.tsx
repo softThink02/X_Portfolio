@@ -18,7 +18,7 @@ import { useState } from "react";
 const navItems = [
   { title: "About", href: "#about", icon: <CiSquareInfo /> },
   { title: "Projects", href: "#projects", icon: <MdOutlineTaskAlt /> },
-  { title: "Testimonials", href: "#testimonials", icon: <PiCertificateLight /> },
+  { title: "Testimonials", href: "#experience", icon: <PiCertificateLight /> },
   { title: "Contact", href: "#contact", icon: <LuContactRound /> },
 ];
 
