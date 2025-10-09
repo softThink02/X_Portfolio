@@ -2,12 +2,24 @@ import { gridItems } from "@/data/index";
 import {HoverEffect} from './ui/card-hover-effect'
 import Image from "next/image";
 import {BoxesCore} from '@/components/ui/backgroundBox'
+import { motion } from "framer-motion"
 
 const Grid = () => {
   return (
     <section id="about">
       <BoxesCore />
-      <div className="w-[94%] px-2 shadow-md shadow-purple md:w-[85%] xl:w-[70%] mx-auto flex flex-col md:flex-row items-start justify-between py-6 md:py-8 xl:py-16 text-gray-200">
+      <motion.div
+        className="w-[94%] px-2 shadow-md shadow-purple md:w-[85%] xl:w-[70%] mx-auto flex flex-col md:flex-row items-start justify-between py-6 md:py-8 xl:py-16 text-gray-200"
+        animate={{
+          y: [0, -10, 0],
+          opacity: [1, 0.95, 1],
+        }}
+        transition={{
+          duration: 6,
+          ease: "easeInOut",
+          repeat: Infinity,
+        }}
+      >
         <div className="md:w-[65%]">
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold mb-6 text-green-500">
             aboutMe(<span className="text-white"> )</span>
@@ -30,14 +42,34 @@ const Grid = () => {
           </p>
         </div>
 
-        <div className="md:w-[30%] mt-6 md:mt-0  flex justify-center">
-          <div className="bg-[#2b2b2b] rounded-xl p-2 shadow-md w-full max-w-[260px] sm:max-w-[300px] md:max-w-[320px] flex flex-col items-center">
-            <div className="relative w-[160px] h-[160px]  overflow-hidden rounded-md md:rounded-full">
+        <div className="md:w-[30%] mt-6 md:mt-0 flex justify-center">
+          <motion.div
+            className="bg-[#2b2b2b] rounded-xl p-2 shadow-md w-full max-w-[260px] sm:max-w-[300px] md:max-w-[320px] flex flex-col items-center"
+            animate={{
+              scale: [1, 1.05, 1],
+            }}
+            transition={{
+              duration: 3,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+          >
+            <motion.div
+              className="relative w-[160px] h-[160px] overflow-hidden rounded-md md:rounded-full"
+              animate={{
+                rotate: [0, 2, -2, 0],
+              }}
+              transition={{
+                duration: 5,
+                ease: "easeInOut",
+                repeat: Infinity,
+              }}
+            >
               <Image src="/me.jpg" alt="X" fill className="object-contain" />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
       <HoverEffect items={gridItems} />
     </section>
   );

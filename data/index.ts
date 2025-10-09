@@ -35,14 +35,6 @@ export const gridItems: gridItemsType[] = [
 
 {/*
   {
-    title: "Tech enthusiast with a passion for development.",
-    description: "",
-  },
-  {
-    title: "Currently building a Project",
-    description: "Skill finder with Nuxtjs (VueJs)",
-  },
-  {
     title: "Do you want to start a project together?",
     description: "",
     hasEmail : true
@@ -80,36 +72,6 @@ export const projects = [
     img: "/skillfinder.png",
     iconLists: ["/re.svg", "/next.svg", "/ts.svg", "/fm.svg"],
     link: "http://skill-finder.net/",
-  },
-];
-
-export const testimonials = [
-  {
-    quote:
-      "Collaborating with Xthink on the Animax project was genuinely energizing. His depth of knowledge across both frontend and backend made our workflows seamless. What stood out most was his ability to communicate ideas clearly, debug collaboratively, and write clean, scalable code that made integration painless. Beyond his technical prowess, Xthink fosters a no-ego, get-things-done atmosphere that makes working with him feel more like creative synergy than just task execution.",
-    name: "Mustafa Balogun",
-    title: "Backend Dev",
-    img: "/musty.jpg",
-    iosQuote:
-      "Xthink’s fullstack knowledge, clear communication, and teamwork makes collaboration seamless and productive",
-  },
-  {
-    quote:
-      "Working with Xthink has been a defining asset to our team. He brings a rare mix of technical precision, initiative, and leadership that sets the tone for excellence. Whether tackling complex bugs or leading feature rollouts, Xthink approaches every challenge with clarity and focus. His reliability and ability to consistently deliver high-quality code under tight timelines made him someone I could always count on. He doesn’t just execute — he elevates the entire team.",
-    name: "Solomon Odafe",
-    iosQuote:
-      "Xthink’s technical skill, leadership, and reliability consistently elevate the team.",
-    title: "Director CompassTech",
-    img: "/odafe.jpg",
-  },
-  {
-    quote:
-      "Hiring Xthink for the Skill Finder platform was one of the best decisions I made. From the first call to final deployment, he was incredibly professional, transparent, and committed to delivering beyond expectations. He understood the business goals, translated them into intuitive user flows, and built a product that’s not only functional but polished. Working with Xthink felt like having a co-founder, not just a freelancer.",
-    name: "Opusunju Moses  (Mr Dark)",
-    title: "CEO JodnaTech",
-    img: "/dark.jpg",
-    iosQuote:
-      "Xthink’s professionalism, vision, and dedication turned our goals into a polished, functional product.",
   },
 ];
 
