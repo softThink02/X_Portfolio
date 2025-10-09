@@ -7,7 +7,7 @@ import Experience from "@/components/Experience";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar"
 import WelcomeUser from "@/components/locationFinder";
-import Modal from '@/components/modal';
+import Modal from '@/components/shared/modal';
 
 import { PiCertificateLight } from "react-icons/pi";
 import { LuContactRound } from "react-icons/lu";
