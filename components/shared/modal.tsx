@@ -2,6 +2,7 @@
 
 import { X } from "lucide-react";
 import { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ModalProps {
   isOpen: boolean;
@@ -10,39 +11,56 @@ interface ModalProps {
 }
 
 export default function Modal({ isOpen, onClose, children }: ModalProps) {
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div
-        className="absolute inset-0 bg-black/70"
-        onClick={onClose}
-      ></div>
-
-      <div className="relative z-40 bg-[#362d2d] text-white rounded-xl p-6 shadow-2xl border border-gray-700 w-[90%] max-w-md mx-auto">
-        <button
-          onClick={onClose}
-          aria-label="Close modal"
-          className="absolute top-3 right-3 p-2 rounded-md hover:bg-white/10 transition"
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          key="modal"
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0.7, y : 20 }}
+          transition={{ duration: 0.8 }}
         >
-          
-          <X size={20} />
-        </button>
+        
+          <motion.div
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            onClick={onClose}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+          />
 
-        {children}
-      </div>
-    </div>
+          <motion.div
+            className="relative z-40 bg-[#362d2d] text-white rounded-xl p-6 shadow-2xl border border-gray-700 w-[90%] max-w-md mx-auto"
+            role="dialog"
+            aria-modal="true"
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            <button
+              onClick={onClose}
+              aria-label="Close modal"
+              className="absolute top-3 right-3 p-2 rounded-md hover:bg-white/10 transition"
+            >
+              <X size={20} />
+            </button>
+
+            {children}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
