@@ -28,7 +28,7 @@ const techStack = [
 
 export default function TechMastery() {
   return (
-    <section className="relative py-32 bg-black text-white overflow-hidden">
+    <section className="relative p-4 bg-black text-white overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: [0.1, 0.3, 0.1] }}
@@ -42,7 +42,7 @@ export default function TechMastery() {
         transition={{ type: "spring", stiffness: 80 }}
         className="text-center text-5xl font-extrabold mb-20 tracking-tight"
       >
-        <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r font-poppins from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
           Technical Mastery
         </span>
       </motion.h2>
