@@ -16,14 +16,16 @@ export default function ProfileCard() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="flex flex-col items-center justify-center px-4">
+    <div className="flex flex-col items-center justify-center w-[80%] mx-auto my-0">
+      <div className="w-full ml-8 flex justify-start">
+        <div className=" rounded-full relative w-[100px] h-[100px] md:w-[120px] md:h-[120px] lg:w-[140px] lg:h-[140px] xl:h-[160px] xl:w-[160px] overflow-hidden mb-1 mt-4">
+          <Image src="/me.jpg" alt="X Avatar" fill />
+        </div>
+      </div>
       <TextGenerateEffect
         words={`Shaping Vision into Flawless User Journeys`}
         className="text-center text-[40px] md:text-5xl lg:text-6xl"
       />
-      <div className=" rounded-full relative w-[100px] h-[100px] md:w-[120px] md:h-[120px] lg:w-[140px] lg:h-[140px] xl:h-[200px] xl:w-[200px] overflow-hidden mb-6">
-        <Image src="/avatar.jpeg" alt="X Avatar" fill />
-      </div>
 
       <div className="text-center md:tracking-wider font-poppins mb-4 font-bold text-sm md:text-lg lg:text-2xl">
         Hi <FooterHeader variant="handSpan">👋</FooterHeader>! I&apos;m Xthink,

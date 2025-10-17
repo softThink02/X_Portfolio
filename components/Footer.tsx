@@ -1,8 +1,8 @@
 import { FaLocationArrow } from "react-icons/fa6";
-import { socialMedia } from "@/data";
+import { socialMedia } from "@/_lib/data";
 import MagicButton from "./MagicButton";
-import { motion} from "framer-motion";
-import {FooterHeader} from './shared/animate'
+import { motion } from "framer-motion";
+import { FooterHeader } from "./shared/animate";
 
 const Footer = () => {
   const openGmailCompose = () => {
@@ -24,9 +24,11 @@ const Footer = () => {
       </div>
 
       <div className="flex flex-col items-center">
-        <FooterHeader variant="h1" className="lg:heading lg:max-w-[50vw] dark:text-white text-center px-[6px] text-[20px] md:text-[28px] lg:text-[32px] xl:text-[48px] text-black leading-snug tracking-wide">
-          Prepared to elevate your digital
-          presence to new heights?
+        <FooterHeader
+          variant="h1"
+          className="lg:heading lg:max-w-[50vw] dark:text-white text-center px-[6px] text-[20px] md:text-[28px] lg:text-[32px] xl:text-[48px] text-black leading-snug tracking-wide"
+        >
+          Prepared to elevate your digital presence to new heights?
         </FooterHeader>
         <FooterHeader
           variant="p"

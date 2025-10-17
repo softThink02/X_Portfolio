@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { workExperience } from "@/data";
+import { workExperience } from "@/_lib/data";
 import { Button } from "./ui/MovingBorders";
 import Modal from "./shared/modal";
 
@@ -43,7 +43,11 @@ export default function Experience() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-12 px-4 md:px-8">
+    <section
+      id="experience"
+      ref={sectionRef}
+      className="w-full py-12 px-4 md:px-8"
+    >
       <AnimatePresence>
         {showModal && (
           <Modal isOpen={showModal} onCloseAction={() => setShowModal(false)}>

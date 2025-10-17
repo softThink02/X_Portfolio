@@ -1,13 +1,10 @@
-import { gridItems } from "@/data/index";
-import {HoverEffect} from './ui/card-hover-effect'
+
 import Image from "next/image";
-import {BoxesCore} from '@/components/ui/backgroundBox'
 import { motion } from "framer-motion"
 
-const Grid = () => {
+const About = () => {
   return (
     <section id="about">
-      <BoxesCore />
       <motion.div
         className="w-[94%] px-2 shadow-md shadow-purple md:w-[85%] xl:w-[70%] mx-auto flex flex-col md:flex-row items-start justify-between py-6 md:py-8 xl:py-16 text-gray-200"
         animate={{
@@ -70,9 +67,8 @@ const Grid = () => {
           </motion.div>
         </div>
       </motion.div>
-      <HoverEffect items={gridItems} />
     </section>
   );
 };
 
-export default Grid;
+export default About;
