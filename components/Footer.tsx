@@ -25,7 +25,7 @@ const Footer = () => {
 
       <div className="flex flex-col items-center">
         <FooterHeader variant="h1" className="lg:heading lg:max-w-[50vw] dark:text-white text-center px-[6px] text-[20px] md:text-[28px] lg:text-[32px] xl:text-[48px] text-black leading-snug tracking-wide">
-          Prepared to elevate <span className="text-purple">your</span> digital
+          Prepared to elevate your digital
           presence to new heights?
         </FooterHeader>
         <FooterHeader

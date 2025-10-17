@@ -1,22 +1,37 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { workExperience } from "@/data";
 import { Button } from "./ui/MovingBorders";
 import Modal from "./shared/modal";
-import { useState, useRef, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 
-const Experience = () => {
+export default function Experience() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const [showModal, setShowModal] = useState(false);
+
+  async function checkClipboardForEmail() {
+    try {
+      const text = await navigator.clipboard.readText();
+      if (!text.trim()) return true;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const isEmail = emailPattern.test(text.trim());
+      return !isEmail;
+    } catch {
+      return true;
+    }
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            setShowModal(true);
+          setTimeout(async () => {
+            const allowed = await checkClipboardForEmail();
+            if (allowed) {
+              setShowModal(true);
+            }
           }, 2000);
         }
       },
@@ -28,14 +43,14 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="experience" ref={sectionRef} className="py-10 px-2 w-full">
+    <section ref={sectionRef} className="w-full py-12 px-4 md:px-8">
       <AnimatePresence>
         {showModal && (
-          <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+          <Modal isOpen={showModal} onCloseAction={() => setShowModal(false)}>
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0.5, scale: 0.9, y: 20 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-center"
             >
@@ -86,9 +101,7 @@ const Experience = () => {
             duration={Math.floor(Math.random() * 10000) + 10000}
             borderRadius="1.75rem"
             style={{
-              background: "rgb(56, 106, 127)",
-              backgroundColor:
-                "linear-gradient(90deg, #020519 0%, #0b0d1c 100%)",
+              background: "linear-gradient(90deg, #020519 0%, #0b0d1c 100%)",
               borderRadius: `calc(1.75rem * 0.96)`,
             }}
             className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800"
@@ -96,7 +109,7 @@ const Experience = () => {
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
               <img
                 src={card.thumbnail}
-                alt={card.thumbnail}
+                alt={card.title}
                 className="lg:w-32 md:w-20 w-16"
               />
               <div className="lg:ms-5">
@@ -113,6 +126,4 @@ const Experience = () => {
       </div>
     </section>
   );
-};
-
-export default Experience;
+}
