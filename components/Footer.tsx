@@ -1,8 +1,11 @@
+"use client";
+
 import { FaLocationArrow } from "react-icons/fa6";
-import { socialMedia } from "@/data";
+import { socialMedia } from "@/_lib/data";
 import MagicButton from "./MagicButton";
-import { motion} from "framer-motion";
-import {FooterHeader} from './shared/animate'
+import { motion } from "framer-motion";
+import { FooterHeader } from "./shared/animate";
+import Image from "next/image";
 
 const Footer = () => {
   const openGmailCompose = () => {
@@ -14,23 +17,28 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full pt-10 mt:pt-20 pb-6 md:pb-10" id="contact">
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
+    <footer
+      className="relative w-full pt-10 md:pt-20 pb-10 overflow-hidden"
+      id="contact"
+    >
+      <div className="absolute inset-0 -z-10 opacity-40">
         <img
           src="/footer-grid.svg"
           alt="grid"
-          className="w-full h-full opacity-50 "
+          className="w-full h-full object-cover"
         />
       </div>
 
-      <div className="flex flex-col items-center">
-        <FooterHeader variant="h1" className="lg:heading lg:max-w-[50vw] dark:text-white text-center px-[6px] text-[20px] md:text-[28px] lg:text-[32px] xl:text-[48px] text-black leading-snug tracking-wide">
-          Prepared to elevate <span className="text-purple">your</span> digital
-          presence to new heights?
+      <div className="flex flex-col items-center text-center relative z-10">
+        <FooterHeader
+          variant="h1"
+          className="lg:heading lg:max-w-[50vw] text-[22px] md:text-[32px] lg:text-[42px] xl:text-[48px] text-black dark:text-white leading-snug tracking-wide"
+        >
+          Prepared to elevate your digital presence to new heights?
         </FooterHeader>
         <FooterHeader
           variant="p"
-          className="text-white-200 md:mt-10 my-5 text-center px-[6px]"
+          className="text-white-200 md:mt-8 mt-5 mb-6 text-center px-[6px]"
         >
           Get in touch with me today and let&apos;s discuss how I can help you
           achieve your goals.
@@ -44,24 +52,79 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
+
+      <div className="flex mt-20 md:flex-row flex-col justify-between items-center relative z-10">
         <p className="md:text-base text-[12px] md:text-[14px] font-poppins">
           Copyright © 2025 Oguagu Ekenechukwu David (Xthink)
         </p>
 
-        <div className="flex items-center mt-4 md:mt-0 md:gap-3 gap-6">
-          {socialMedia.map((info) => (
-            <a
-              key={info.id}
-              href={info.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300">
-                <img src={info.img} alt="icons" width={20} height={20} />
-              </div>
-            </a>
-          ))}
+        <div className="relative w-40 h-40 md:w-52 md:h-52 mt-8 md:mt-0 flex justify-center items-center">
+          <motion.div
+            className="absolute inset-0 flex justify-center items-center"
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
+          >
+            {socialMedia.map((info, idx) => (
+              <motion.a
+                key={info.id}
+                href={info.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute"
+                style={{
+                  transform: `rotate(${
+                    (idx * 360) / socialMedia.length
+                  }deg) translate(80px)`,
+                }}
+                whileHover={{
+                  scale: 1.2,
+                  rotate: 10,
+                  filter: "drop-shadow(0px 0px 6px rgba(255,255,255,0.6))",
+                }}
+              >
+                <motion.div
+                  className="w-12 h-12 relative flex justify-center items-center rounded-full border border-black-300 bg-black-200/60 backdrop-blur-md"
+                  whileHover={{
+                    scale: 1.2,
+                    backgroundColor: "rgba(255,255,255,0.1)",
+                  }}
+                  transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                >
+                  <Image src={info.img} alt={info.link} fill />
+                </motion.div>
+              </motion.a>
+            ))}
+          </motion.div>
+
+          <motion.div
+            className="absolute inset-0 flex justify-center items-center"
+            animate={{ rotate: -360 }}
+            transition={{ repeat: Infinity, duration: 22, ease: "linear" }}
+          >
+            {socialMedia.map((info, idx) => (
+              <motion.a
+                key={`${info.id}-mirror`}
+                href={info.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute"
+                style={{
+                  transform: `rotate(${
+                    (idx * 360) / socialMedia.length
+                  }deg) translate(60px)`,
+                }}
+              >
+                <motion.div
+                  className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full bg-transparent border border-gray-500/40"
+                  whileHover={{
+                    scale: 1.3,
+                    backgroundColor: "rgba(255,255,255,0.05)",
+                    borderColor: "rgba(255,255,255,0.5)",
+                  }}
+                />
+              </motion.a>
+            ))}
+          </motion.div>
         </div>
       </div>
     </footer>

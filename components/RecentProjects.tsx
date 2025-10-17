@@ -1,15 +1,11 @@
 "use client";
 
 import { FaLocationArrow } from "react-icons/fa6";
-import { projects } from "@/data";
+import { projects } from "@/_lib/data";
 import { PinContainer } from "./ui/Pin";
 import { CardSkeletonContainer, Skeleton } from "./ui/icon-display";
 
-
 const RecentProjects = () => {
-
- 
-
   return (
     <section id="projects" className="py-4 md:py-10">
       <h1 className="dark:text-white lg:heading text-[20px] mb-2 lg:mb-4 text-center md:text-[28px] lg:text-[32px] xl:text-[48px] text-black">

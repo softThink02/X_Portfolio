@@ -6,11 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface ModalProps {
   isOpen: boolean;
-  onClose: () => void;
+  onCloseAction: () => void;
   children: React.ReactNode;
 }
 
-export default function Modal({ isOpen, onClose, children }: ModalProps) {
+export default function Modal({ isOpen, onCloseAction, children }: ModalProps) {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
@@ -33,7 +33,7 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
         
           <motion.div
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-            onClick={onClose}
+            onClick={onCloseAction}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -50,7 +50,7 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
             <button
-              onClick={onClose}
+              onClick={onCloseAction}
               aria-label="Close modal"
               className="absolute top-3 right-3 p-2 rounded-md hover:bg-white/10 transition"
             >

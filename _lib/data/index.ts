@@ -6,39 +6,7 @@ type gridItemsType = {
   hoverBg?: string;
   hasEmail? : boolean
 };
-export const gridItems: gridItemsType[] = [
-  {
-    title: "What I'm up to",
-    description: "Currently building Pozse Fashion webapp with Reactjs (NextJs)",
-    InitBg: "/pozse.png",
-    hoverBg: "/next.jpg",
-  },
-  {
-    title: "I prioritize client collaboration, fostering open communication",
-    description: "",
-    InitBg: "/collab.jpg",
-    hoverBg: "/team.jpg",
-  },
-  {
-    title: "Interned at Zuri, Genesys; built Animax, honed skills.",
-    description: "",
-    InitBg: "/upskill.jpg",
-    hoverBg: "/zuri.jpg",
-  },
-  {
-    title: "My tech stack",
-    description: "Reactjs (NextJs), Vuejs (Nuxtjs)",
-    InitBg: "/next.jpg",
-    hoverBg: "/nuxt.jpg",
-  },
-];
 
-{/*
-  {
-    title: "Do you want to start a project together?",
-    description: "",
-    hasEmail : true
-  },*/}
 
 export const projects = [
   {
