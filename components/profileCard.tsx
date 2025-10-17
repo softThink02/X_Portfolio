@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import {AnimatePresence } from "framer-motion";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";

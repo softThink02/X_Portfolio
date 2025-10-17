@@ -8,6 +8,7 @@ import WelcomeUser from "@/components/locationFinder";
 import Modal from '@/components/shared/modal';
 import FloatingDockBar from '@/components/floatingNavbar'
 import About from '@/components/about'
+import TechMastery from '@/components/techMastery'
 
 import { useState } from "react";
 
@@ -23,6 +24,7 @@ const Home = () => {
         </Modal>
         <FloatingDockBar/>
         <Hero />
+        <TechMastery />
         <About />
         <RecentProjects />
         <Experience />
