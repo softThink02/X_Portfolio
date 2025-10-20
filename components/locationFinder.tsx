@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { LocalStorage } from "@/_lib/utils";
 import { motion } from "framer-motion";
 import { FooterHeader } from "./shared/animate";
+import Image from "next/image";
 
 export default function WelcomeUser() {
   const [isClient, setIsClient] = useState(false);
@@ -69,6 +70,9 @@ export default function WelcomeUser() {
       >
         {isDetected ? (
           <>
+          <div className='relative  w-32 h-32 mx-auto my-0' >
+            <Image src='/location.svg' fill alt='welcome' />
+          </div>
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
