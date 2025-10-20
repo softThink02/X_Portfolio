@@ -26,7 +26,7 @@ const Home = () => {
         <TechMastery />
         <About />
         <RecentProjects />
-        <Experience />
+        {/* <Experience /> */}
         <Footer />
       </div>
     </main>
