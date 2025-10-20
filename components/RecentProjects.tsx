@@ -1,76 +1,97 @@
 "use client";
 
-import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/_lib/data";
-import { PinContainer } from "./ui/Pin";
-import { CardSkeletonContainer, Skeleton } from "./ui/icon-display";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
-const RecentProjects = () => {
+export default function RecentProjects() {
   return (
-    <section id="projects" className="py-4 md:py-10">
-      <h1 className="dark:text-white lg:heading text-[20px] mb-2 lg:mb-4 text-center md:text-[28px] lg:text-[32px] xl:text-[48px] text-black">
-        A brief showcase of <span className="text-purple">recent projects</span>
+    <section className="py-16 w-[100%] md:w-[80%] mx-auto my-0">
+      <h1 className="dark:text-white lg:heading text-[20px] mb-2 lg:mb-6 text-center md:text-[28px] lg:text-[32px] xl:text-[48px] text-black">
+        Recent <span className="text-purple">Projects</span>
       </h1>
-      <div className="flex lg:flex-wrap p-2 flex-col lg:flex-row items-center gap-4 justify-center">
-        {projects.map((item) => (
-          <div
-            key={item.id}
-            className="h-[24rem] md:h-[30rem] lg:h-[36rem] xl:h-[32rem] overflow-hidden flex items-center justify-center w-[94%] md:w-[30rem] lg:w-[28rem]"
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 px-6">
+        {projects.map((project, i) => (
+          <motion.div
+            key={project.id}
+            initial={{ opacity: 0, y: 80, scale: 0.95 }}
+            animate={{
+              opacity: 1,
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 4,
+              delay: i * 0.3,
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: "easeInOut",
+            }}
+            whileHover={{
+              scale: 1.05,
+              rotate: [-0.5, 0.5, 0],
+              boxShadow: "0 10px 25px rgba(0,0,0,0.10)",
+            }}
+            className="bg-zinc-900/60 rounded-2xl overflow-hidden backdrop-blur-lg border border-zinc-800 shadow-lg hover:shadow-indigo-500/30 transition-all duration-300"
           >
-            <PinContainer title={item.title} href={item.link}>
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-4">
-                <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                  style={{ backgroundColor: "#13162D" }}
-                >
-                  <img src="/bg.png" alt="bgimg" />
-                </div>
-                <img
-                  src={item.img}
-                  alt="cover"
-                  className="z-10 absolute bottom-0"
-                />
-              </div>
+            <div className="relative h-40 w-full overflow-hidden">
+              <Image
+                src={project.img}
+                alt={project.title}
+                fill
+                className="object-cover hover:scale-110 transition-transform duration-700"
+              />
+            </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                {item.title}
-              </h1>
-
-              <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
-                style={{
-                  color: "#BEC1DD",
-                  margin: "1vh 0",
-                }}
-              >
-                {item.des}
+            <div className="p-5 space-y-3">
+              <h3 className="text-lg font-semibold text-white">
+                {project.title}
+              </h3>
+              <p className="text-gray-400 text-sm line-clamp-3">
+                {project.des}
               </p>
 
-              <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex border-2 relative items-center">
-                  <CardSkeletonContainer>
-                    <Skeleton arr={item.iconLists} />
-                  </CardSkeletonContainer>
-                </div>
-
-                <div className="flex justify-center items-center">
-                  <p
-                    onClick={() =>
-                      window.open(item.link, "_blank", "noopener,noreferrer")
-                    }
-                    className="flex lg:text-xl md:text-xs text-sm text-purple"
-                  >
-                    View Live Site
-                  </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
-                </div>
+              <div className="flex flex-wrap gap-3 mt-3">
+                {project.iconLists.map((icon, idx) => (
+                  <motion.img
+                    key={idx}
+                    src={icon}
+                    alt="tech"
+                    className="h-6 w-6"
+                    animate={{
+                      y: [0, -5, 0, 5, 0],
+                      rotate: [0, 15, -15, 10, -10, 0],
+                      scale: [1, 1.1, 0.95, 1.05, 1],
+                    }}
+                    transition={{
+                      duration: 3 + Math.random() * 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: Math.random() * 1.5,
+                    }}
+                    whileHover={{
+                      scale: 1.3,
+                      rotate: 360,
+                      transition: { duration: 0.8 },
+                    }}
+                  />
+                ))}
               </div>
-            </PinContainer>
-          </div>
+
+              <div className="pt-3">
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors text-sm font-medium"
+                >
+                  Visit Project →
+                </Link>
+              </div>
+            </div>
+          </motion.div>
         ))}
       </div>
     </section>
   );
-};
-
-export default RecentProjects;
+}

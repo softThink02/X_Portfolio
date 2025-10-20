@@ -27,10 +27,9 @@ export default function Modal({ isOpen, onCloseAction, children }: ModalProps) {
           className="fixed inset-0 z-50 flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0.7, y : 20 }}
+          exit={{ opacity: 0.7, y: 20 }}
           transition={{ duration: 0.8 }}
         >
-        
           <motion.div
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             onClick={onCloseAction}
@@ -41,7 +40,7 @@ export default function Modal({ isOpen, onCloseAction, children }: ModalProps) {
           />
 
           <motion.div
-            className="relative z-40 bg-[#362d2d] text-white rounded-xl p-6 shadow-2xl border border-gray-700 w-[90%] max-w-md mx-auto"
+            className="relative z-40 bg-[#362d2d] text-white rounded-xl pb-6 px-4 shadow-2xl border border-gray-700 w-[90%] max-w-md mx-auto"
             role="dialog"
             aria-modal="true"
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -52,7 +51,7 @@ export default function Modal({ isOpen, onCloseAction, children }: ModalProps) {
             <button
               onClick={onCloseAction}
               aria-label="Close modal"
-              className="absolute top-3 right-3 p-2 rounded-md hover:bg-white/10 transition"
+              className="absolute top-3 right-3 p-2 rounded-full bg-white/10 transition"
             >
               <X size={20} />
             </button>

@@ -14,7 +14,11 @@ const handleDownloadCV = () => {
 
 const navItems = [
   { icon: <Home className="h-5 w-5" />, href: "/", label: "Home" },
-  { icon: <X className="h-5 w-5" />, href: "/x", label: "X" },
+  {
+    icon: <X className="h-5 w-5" />,
+    href: "https://twitter.com/SThink02",
+    label: "X",
+  },
   {
     icon: <Github className="h-5 w-5" />,
     href: "https://github.com/softthink02@gmail.com",
@@ -30,7 +34,7 @@ const navItems = [
 
 export default function FloatingDockBar() {
   return (
-    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[320px]">
       <div className="flex items-center justify-center gap-3 rounded-full border border-neutral-200 bg-white py-2 shadow-lg dark:border-neutral-800 dark:bg-neutral-900">
         {navItems.map((item, i) =>
           item.onClick ? (
