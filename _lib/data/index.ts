@@ -1,4 +1,3 @@
-
 export const projects = [
   {
     id: 1,
@@ -34,35 +33,34 @@ export const projects = [
   },
 ];
 
-
 export const workExperience = [
   {
     id: 1,
     title: "Frontend Engineer Intern",
-    desc: "Interned at Zuri, contributing to the development of the Animax Animation Library using React.js, enhancing interactivity.",
+    desc: "Interned at Zuri, contributing to the development of the Animax Animation Library using React.js, enhancing interactivity, year 2022",
     className: "md:col-span-2",
-    thumbnail: "/exp1.svg",
+    thumbnail: "/workspace.svg",
   },
-  // {
-  //   id: 2,
-  //   title: "Mobile App Dev - JSM Tech",
-  //   desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-  //   className: "md:col-span-2",
-  //   thumbnail: "/exp2.svg",
-  // },
-  // {
-  //   id: 3,
-  //   title: "Freelance App Dev Project",
-  //   desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-  //   className: "md:col-span-2",
-  //   thumbnail: "/exp3.svg",
-  // },
+  {
+    id: 2,
+    title: "Frontend Engineer Intern - Genesys Tech Hub",
+    desc: "Gained hands-on experience in building dynamic data visualization interfaces and interactive dashboards, enhancing user insights through React and modern UI libraries, year 2023",
+    className: "md:col-span-2",
+    thumbnail: "/visual.svg",
+  },
+  {
+    id: 3,
+    title: "Frontend Developer - Jodna Technologies",
+    desc: "Currently working as a Frontend Developer at Jodna Technologies (September 2024 – Present), where I’ve contributed to building new products and maintaining existing systems to enhance performance, scalability, and user experience.",
+    className: "md:col-span-2",
+    thumbnail: "/maintainance.svg",
+  },
   {
     id: 4,
-    title: "Frontend Developer",
-    desc: "Development of the Ministry of Foreign Affairs (MFA) platform, delivering and maintaining user-facing features using modern frontend technologies.",
+    title: "Frontend Lead Developer - Pozse Fashion Hub",
+    desc: "Working as a Frontend Developer at Pozse Fashion Hub (August 2025 – Present), focusing on building and maintaining user-facing features, optimizing performance, and ensuring a seamless shopping experience through modern frontend technologies.",
     className: "md:col-span-2",
-    thumbnail: "/exp4.svg",
+    thumbnail: "/pozse.svg",
   },
 ];
 
