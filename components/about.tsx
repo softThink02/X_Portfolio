@@ -62,7 +62,7 @@ const About = () => {
                 repeat: Infinity,
               }}
             >
-              <Image src="/me.jpg" alt="X" fill className="object-contain" />
+              <Image src="/me.jpg" alt="X" sizes="auto" fill className="object-contain" />
             </motion.div>
           </motion.div>
         </div>

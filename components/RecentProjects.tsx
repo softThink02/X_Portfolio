@@ -35,11 +35,12 @@ export default function RecentProjects() {
             }}
             className="bg-zinc-900/60 rounded-2xl overflow-hidden backdrop-blur-lg border border-zinc-800 shadow-lg hover:shadow-indigo-500/30 transition-all duration-300"
           >
-            <div className="relative h-40 w-full overflow-hidden">
+            <div className="relative h-40 w-[100%] overflow-hidden">
               <Image
                 src={project.img}
                 alt={project.title}
                 fill
+                sizes="auto"
                 className="object-cover hover:scale-110 transition-transform duration-700"
               />
             </div>

@@ -58,7 +58,7 @@ export default function WelcomeUser() {
         stiffness: 120,
       }}
     >
-      <motion.p
+      <motion.div
         className="font-nohemi font-[500] text-[14px] md:text-[17px] tracking-wide"
         key={isDetected ? "detected" : "detecting"}
         initial={{ opacity: 0, y: 10 }}
@@ -120,7 +120,7 @@ export default function WelcomeUser() {
             🌍 Detecting your region... hang tight!
           </motion.span>
         )}
-      </motion.p>
+      </motion.div>
     </motion.div>
   );
 }

@@ -36,7 +36,7 @@ export default function TechMastery() {
         className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-red-500/10 blur-3xl"
       />
 
-      <motion.h2
+      <motion.div
         initial={{ y: 100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 80 }}
@@ -45,7 +45,7 @@ export default function TechMastery() {
         <h1 className="dark:text-white lg:heading text-[20px] mb-2 lg:mb-4 text-center md:text-[28px] lg:text-[32px] xl:text-[48px] text-black">
           Technical Mastery <span className="text-purple">My Stack</span>
         </h1>
-      </motion.h2>
+      </motion.div>
 
       <div className="flex flex-wrap justify-center gap-8 relative z-10">
         {techStack.map((tech, index) => (
