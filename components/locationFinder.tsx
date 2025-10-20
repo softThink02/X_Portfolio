@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { LocalStorage } from "@/_lib/utils";
 import { motion } from "framer-motion";
+import { FooterHeader } from "./shared/animate";
 
 export default function WelcomeUser() {
   const [isClient, setIsClient] = useState(false);
@@ -47,7 +48,7 @@ export default function WelcomeUser() {
 
   return (
     <motion.div
-      className="text-white text-lg md:text-xl font-semibold text-center select-none"
+      className="text-white text-lg md:text-xl font-semibold mt-12 text-center select-none"
       initial={{ opacity: 0, y: 10, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{
@@ -73,7 +74,7 @@ export default function WelcomeUser() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              👋 Hey there! It’s great to see someone from{" "}
+              Hey!<FooterHeader variant="handSpan">👋</FooterHeader>there! It’s great to see someone from{" "}
             </motion.span>
 
             <motion.span

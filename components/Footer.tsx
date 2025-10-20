@@ -29,7 +29,7 @@ const Footer = () => {
         />
       </div>
 
-      <div className="flex flex-col items-center text-center relative z-10">
+      <div className="flex flex-col items-center mx-4 text-center relative z-10">
         <FooterHeader
           variant="h1"
           className="lg:heading lg:max-w-[50vw] text-[22px] md:text-[32px] lg:text-[42px] xl:text-[48px] text-black dark:text-white leading-snug tracking-wide"
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex mt-20 md:flex-row flex-col justify-between items-center relative z-10">
+      <div className="flex mt-20 md:flex-row flex-col justify-between mx-4 items-center relative z-10">
         <p className="md:text-base text-[12px] md:text-[14px] font-poppins">
           Copyright © 2025 Oguagu Ekenechukwu David (Xthink)
         </p>

@@ -28,7 +28,7 @@ const techStack = [
 
 export default function TechMastery() {
   return (
-    <section className="relative p-4 bg-black text-white overflow-hidden">
+    <section className="relative p-4 md:my-8 my-4 bg-black text-white overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: [0.1, 0.3, 0.1] }}
@@ -42,9 +42,9 @@ export default function TechMastery() {
         transition={{ type: "spring", stiffness: 80 }}
         className="text-center text-5xl font-extrabold mb-20 tracking-tight"
       >
-        <span className="bg-gradient-to-r font-poppins from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
-          Technical Mastery
-        </span>
+        <h1 className="dark:text-white lg:heading text-[20px] mb-2 lg:mb-4 text-center md:text-[28px] lg:text-[32px] xl:text-[48px] text-black">
+          Technical Mastery <span className="text-purple">My Stack</span>
+        </h1>
       </motion.h2>
 
       <div className="flex flex-wrap justify-center gap-8 relative z-10">
@@ -87,7 +87,7 @@ export default function TechMastery() {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, type: "spring" }}
-        className="text-center text-gray-400 mt-20 text-lg max-w-2xl mx-auto"
+        className="text-center text-gray-400 mt-20 md:text-[16px] lg:text-lg text-[14px] max-w-2xl mx-auto"
       >
         Pushing boundaries of web engineering with precision, velocity, and code
         that *never blinks*.

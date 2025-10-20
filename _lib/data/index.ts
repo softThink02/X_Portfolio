@@ -1,13 +1,4 @@
 
-type gridItemsType = {
-  title: string;
-  description: string;
-  InitBg?: string;
-  hoverBg?: string;
-  hasEmail? : boolean
-};
-
-
 export const projects = [
   {
     id: 1,
