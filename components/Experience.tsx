@@ -62,7 +62,7 @@ export default function Experience() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-center"
             >
-              <h2 className="text-2xl font-semibold text-neutral-800 dark:text-neutral-100 mb-2">
+              <h2 className="text-2xl font-semibold text-neutral-800 mt-12 dark:text-neutral-100 mb-2">
                 Copy My Email
               </h2>
 
