@@ -1,3 +1,9 @@
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
 type StorageAction = "get" | "set" | "remove" | "clear";
 
@@ -7,7 +13,10 @@ interface StorageOptions {
   ttl?: number;
 }
 
-export const LocalStorage = (action: StorageAction, options?: StorageOptions) => {
+export const LocalStorage = (
+  action: StorageAction,
+  options?: StorageOptions
+) => {
   if (typeof window === "undefined") return null;
 
   const { key, value, ttl } = options || {};
