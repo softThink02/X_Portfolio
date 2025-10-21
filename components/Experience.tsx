@@ -11,18 +11,21 @@ export default function Experience() {
   const [showModal, setShowModal] = useState(false);
 
   async function checkClipboardForEmail() {
+    if (typeof navigator === "undefined" || !navigator.clipboard?.readText)
+      return true;
     try {
       const text = await navigator.clipboard.readText();
       if (!text.trim()) return true;
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      const isEmail = emailPattern.test(text.trim());
-      return !isEmail;
+      return !emailPattern.test(text.trim());
     } catch {
       return true;
     }
   }
 
   useEffect(() => {
+    if (typeof window === "undefined" || !("IntersectionObserver" in window))
+      return;
     const alreadyShown = sessionStorage.getItem("emailPopupShown");
     if (alreadyShown) return;
 
