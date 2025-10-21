@@ -54,7 +54,7 @@ const Footer = () => {
       </div>
 
       <div className="flex mt-20 md:flex-row flex-col justify-between mx-4 items-center relative z-10">
-        <p className="md:text-base text-[12px] md:text-[14px] font-poppins">
+        <p className="md:text-base text-[12px] text-center md:text-left md:text-[14px] font-poppins">
           Copyright © 2025 Oguagu Ekenechukwu David (Xthink)
         </p>
 
