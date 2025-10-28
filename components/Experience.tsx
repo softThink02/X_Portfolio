@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { workExperience } from "@/_lib/data";
 import { Button } from "./ui/MovingBorders";
 import Modal from "./shared/modal";
+import { LocalStorage } from "@/_lib/utils"
 
 export default function Experience() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -24,6 +25,7 @@ export default function Experience() {
   }
 
   useEffect(() => {
+    if (LocalStorage("get", { key: "emailCopied" })) return;
     if (typeof window === "undefined" || !("IntersectionObserver" in window))
       return;
     const alreadyShown = sessionStorage.getItem("emailPopupShown");
@@ -65,11 +67,11 @@ export default function Experience() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-center"
             >
-              <h2 className="text-2xl font-semibold text-neutral-800 mt-12 dark:text-neutral-100 mb-2">
+              <h2 className="lg:text-2xl md:text-[16px] text-[14px] font-semibold text-neutral-800 mt-12 dark:text-neutral-100 mb-2">
                 Copy My Email
               </h2>
 
-              <p className="text-neutral-600 dark:text-neutral-400 font-poppins mb-6">
+              <p className="text-neutral-600 md:text-[16px] text-[12px] dark:text-neutral-400 font-poppins mb-6">
                 Quickly copy my email address to your clipboard.
               </p>
 
@@ -91,6 +93,10 @@ export default function Experience() {
                 }}
                 onClick={() => {
                   navigator.clipboard.writeText("softthink02@gmail.com");
+                  LocalStorage("set", {
+                    key: "emailCopied",
+                    value: true,
+                  });
                   setShowModal(false);
                 }}
               >

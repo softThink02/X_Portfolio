@@ -21,7 +21,7 @@ const navItems = [
   },
   {
     icon: <Github className="h-5 w-5" />,
-    href: "https://github.com/softthink02@gmail.com",
+    href: "https://github.com/softThink02",
     label: "GitHub",
   },
   {
