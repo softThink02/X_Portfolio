@@ -16,7 +16,7 @@ export default function RecentProjects() {
         {projects.map((project, i) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 80, scale: 0.95 }}
+            initial={{ opacity: 0.8, y: 80, scale: 0.95 }}
             animate={{
               opacity: 1,
               y: [0, -10, 0],

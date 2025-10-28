@@ -67,7 +67,7 @@ export default function ProfileCard() {
         }}
         className="rounded-full relative w-[120px] h-[120px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] xl:w-[180px] xl:h-[180px] overflow-hidden shadow-[0_0_60px_10px_rgba(147,51,234,0.3)]"
       >
-        <Image src="/me.jpg" sizes="auto" alt="X Avatar" fill />
+        <Image src="/myEmoji.jpg" sizes="auto" alt="X Avatar" fill />
       </motion.div>
 
       <motion.div
