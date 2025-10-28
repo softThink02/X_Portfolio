@@ -33,7 +33,7 @@ export const LocalStorage = (
         break;
 
       case "get":
-        if (!key) throw new Error("Missing key for storage get");
+        if (!key) return;
         const raw = localStorage.getItem(key);
         if (!raw) return null;
 
