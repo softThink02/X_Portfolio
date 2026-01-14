@@ -73,9 +73,9 @@ export const workExperience = [
   {
     id: 5,
     title: "Frontend Lead Developer - Estate-Ai",
-    desc: "Worked as a contract Frontend Lead Developer at Estate-AI (from December 2025 to Present), leading the implementation of user-facing features through API integration, component architecture, and state management. Responsible for integrating backend services, writing and maintaining tests, optimizing frontend performance, and ensuring a smooth, reliable user experience using modern frontend technologies. Contributed to code reviews, bug fixing, and rapid iteration in a fast-paced product environment.",
+    desc: "Work on contract, Frontend Lead Developer at Estate-AI (December 2025 – Present), delivering user-facing features through API integration, scalable component architecture, and state management. Handled backend integration, testing, performance optimization, code reviews, and bug fixes to ensure a smooth, reliable user experience in a fast-paced environment.",
     className: "md:col-span-2",
-    thumbnail: "/pozse.svg",
+    thumbnail: "/visual.svg",
   },
 ];
 
