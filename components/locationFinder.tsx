@@ -26,8 +26,8 @@ export default function WelcomeUser() {
       try {
         const res = await fetch("https://ipapi.co/json/");
         const data = await res.json();
-        const detected =
-          data.city || data.region || data.country_name || "your region";
+
+        const detected = data.country_name || "your country";
 
         setLocation(detected);
 
@@ -38,7 +38,7 @@ export default function WelcomeUser() {
         });
       } catch (err) {
         console.error("Location fetch failed:", err);
-        setLocation("your region");
+        setLocation("your country");
       }
     };
 
@@ -70,15 +70,16 @@ export default function WelcomeUser() {
       >
         {isDetected ? (
           <>
-          <div className='relative  w-32 h-32 mx-auto my-0' >
-            <Image src='/location.svg' fill alt='welcome' />
-          </div>
+            <div className="relative  w-32 h-32 mx-auto my-0">
+              <Image src="/location.svg" fill alt="welcome" />
+            </div>
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              Hey!<FooterHeader variant="handSpan">👋</FooterHeader>there! It’s great to see someone from{" "}
+              Hey!<FooterHeader variant="handSpan">👋</FooterHeader>there! It’s
+              great to see someone from{" "}
             </motion.span>
 
             <motion.span
