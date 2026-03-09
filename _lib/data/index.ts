@@ -1,6 +1,14 @@
 export const projects = [
   {
     id: 1,
+    title: "BabyDrawForMe",
+    des: "BabyDrawForMe is a real-time collaborative whiteboard application built with Next.js and React, powered by the canvas engine of tldraw for interactive drawing and diagramming. The platform enables multiple users to draw, edit, and collaborate simultaneously on a shared infinite canvas using real-time synchronization provided by Liveblocks",
+    img: "/mfa.jpg",
+    iconLists: ["/next.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    link: "https://x-draw-flow.vercel.app",
+  },
+  {
+    id: 2,
     title: "MFA",
     des: "Ministry of Foreign Affairs serves as the official digital gateway to a nation’s foreign policy, diplomatic missions, and international relations. It provides up-to-date information on foreign policy objectives, consular services, visa and passport guidelines, international agreements, press releases, and official statements.",
     img: "/mfa.jpg",
@@ -8,23 +16,23 @@ export const projects = [
     link: "https://mfawebsite-psi.vercel.app",
   },
   {
-    id: 2,
+    id: 3,
     title: "Xarme",
     des: "Xarme (mini telegram) is a lightweight, real-time messaging platform inspired by Telegram — built for fast, secure, and seamless communication. Whether you're chatting one-on-one, creating group conversations, or sharing media, Xarme delivers an intuitive interface and end-to-end encrypted messaging with minimal overhead.",
     img: "/xarme.jpg",
     iconLists: ["/next.svg", "/re.svg", "/ts.svg", "/three.svg"],
     link: "https://xarme-frontend.vercel.app",
   },
-  // {
-  //   id: 3,
-  //   title: "GIOS",
-  //   des: "Modern, user-friendly online platform designed to offer a seamless shopping experience across a wide range of products.",
-  //   img: "/gios.jpg",
-  //   iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
-  //   link: "https://gios-client.vercel.app/dashboard",
-  // },
   {
-    id: 3,
+    id: 4,
+    title: "GIOS",
+    des: "Modern, user-friendly online platform designed to offer a seamless shopping experience across a wide range of products.",
+    img: "/gios.jpg",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
+    link: "https://gios-client.vercel.app/dashboard",
+  },
+  {
+    id: 5,
     title: "Pozse Fashion Hub",
     des: "Pozse Fashion Hub is a creator-focused platform where fashion innovators can showcase their work, buy and sell essential fashion props, and collaborate—all in one streamlined space.",
     img: "/pozsenic.png",
@@ -32,7 +40,7 @@ export const projects = [
     link: "https://pozse.com",
   },
   {
-    id: 4,
+    id: 6,
     title: "SKILL FINDER",
     des: "A web app that helps users quickly discover, match, and connect with skills or experts relevant to their goals.",
     img: "/skillfinder.png",
