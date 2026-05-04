@@ -33,7 +33,7 @@ export default function RecentProjects() {
               rotate: [-0.5, 0.5, 0],
               boxShadow: "0 10px 25px rgba(0,0,0,0.10)",
             }}
-            className="bg-black-200 rounded-2xl overflow-hidden backdrop-blur-lg border border-zinc-800 shadow-lg hover:shadow-indigo-500/30 transition-all duration-300"
+            className="bg-black rounded-2xl overflow-hidden backdrop-blur-lg border border-zinc-800 shadow-lg hover:shadow-indigo-500/30 transition-all duration-300"
           >
             <div className="relative h-40 w-[100%] overflow-hidden">
               <Image

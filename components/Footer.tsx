@@ -22,11 +22,9 @@ const Footer = () => {
       id="contact"
     >
       <div className="absolute inset-0 -z-10 opacity-40">
-        <img
-          src="/footer-grid.svg"
-          alt="grid"
-          className="w-full h-full object-cover"
-        />
+        <div className="w-full h-full relative">
+          <Image src="/footer-grid.svg" alt="grid" fill className="object-cover" />
+        </div>
       </div>
 
       <div className="flex flex-col items-center mx-4 text-center relative z-10">
