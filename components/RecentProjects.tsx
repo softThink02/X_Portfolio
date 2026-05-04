@@ -33,7 +33,7 @@ export default function RecentProjects() {
               rotate: [-0.5, 0.5, 0],
               boxShadow: "0 10px 25px rgba(0,0,0,0.10)",
             }}
-            className="bg-zinc-900/60 rounded-2xl overflow-hidden backdrop-blur-lg border border-zinc-800 shadow-lg hover:shadow-indigo-500/30 transition-all duration-300"
+            className="bg-black-200 rounded-2xl overflow-hidden backdrop-blur-lg border border-zinc-800 shadow-lg hover:shadow-indigo-500/30 transition-all duration-300"
           >
             <div className="relative h-40 w-[100%] overflow-hidden">
               <Image
@@ -49,7 +49,7 @@ export default function RecentProjects() {
               <h3 className="text-lg font-semibold text-white">
                 {project.title}
               </h3>
-              <p className="text-gray-400 text-sm line-clamp-3">
+              <p className="text-white text-sm line-clamp-3">
                 {project.des}
               </p>
 

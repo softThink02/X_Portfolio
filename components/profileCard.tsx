@@ -92,8 +92,8 @@ export default function ProfileCard() {
         className="text-center md:tracking-wider font-poppins mb-4 font-bold text-sm md:text-lg lg:text-2xl"
       >
         Hi <FooterHeader variant="handSpan">👋</FooterHeader>! I&apos;m{" "}
-        <span className="text-purple-500">Xthink</span>, a React (Next.js)
-        Frontend Developer.
+        <span className="text-purple-500">David X</span>, a React (Next.js)
+        Senior Frontend Developer.
       </motion.div>
 
       <motion.div
@@ -127,7 +127,7 @@ export default function ProfileCard() {
             {showText ? (
               <FooterHeader
                 variant="heroDiv"
-                className="absolute inset-0 flex text-[12px] font-bold md:text-[14px] lg:text-[16px] xl:text-[20px] items-center justify-center"
+                className="absolute bg-black inset-0 flex text-[12px] font-bold md:text-[14px] lg:text-[16px] xl:text-[20px] items-center justify-center"
               >
                 <span className="w-3 h-3 bg-green-500 font-poppins rounded-full mr-2"></span>
                 Available for new projects
@@ -135,7 +135,7 @@ export default function ProfileCard() {
             ) : (
               <FooterHeader
                 variant="heroImg"
-                className="absolute inset-0 flex items-center justify-center text-[20px] lg:text-[24px] xl:text-[32px]"
+                className="absolute bg-black inset-0 flex items-center justify-center text-[20px] lg:text-[24px] xl:text-[32px]"
               >
                 ✈️
               </FooterHeader>

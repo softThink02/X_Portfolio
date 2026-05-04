@@ -1,9 +1,9 @@
 export const projects = [
   {
     id: 1,
-    title: "BabyDrawForMe",
+    title: "Chalkboard",
     des: "BabyDrawForMe is a real-time collaborative whiteboard application built with Next.js and React, powered by the canvas engine of tldraw for interactive drawing and diagramming. The platform enables multiple users to draw, edit, and collaborate simultaneously on a shared infinite canvas using real-time synchronization provided by Liveblocks",
-    img: "/mfa.jpg",
+    img: "/draw.png",
     iconLists: ["/next.svg", "/ts.svg", "/stream.svg", "/c.svg"],
     link: "https://x-draw-flow.vercel.app",
   },
@@ -84,6 +84,13 @@ export const workExperience = [
     desc: "Work on contract, Frontend Lead Developer at Estate-AI (December 2025 – Present), delivering user-facing features through API integration, scalable component architecture, and state management. Handled backend integration, testing, performance optimization, code reviews, and bug fixes to ensure a smooth, reliable user experience in a fast-paced environment.",
     className: "md:col-span-2",
     thumbnail: "/visual.svg",
+  },
+  {
+    id: 6,
+    title: "Frontend Lead Developer - AnambraTechies",
+    desc: "Serving as Frontend Lead Developer at AnambraTechies (January 2026 – Present), leading a growing frontend community of over 630 developers. Responsible for guiding technical direction, mentoring members, and enforcing best practices across projects. Driving knowledge sharing through structured sessions, code reviews, and collaborative builds while maintaining high standards in scalable architecture, performance, and modern frontend development workflows.",
+    className: "md:col-span-2",
+    thumbnail: "/workspace.svg",
   },
 ];
 

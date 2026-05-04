@@ -118,7 +118,7 @@ export default function Experience() {
             duration={Math.floor(Math.random() * 10000) + 10000}
             borderRadius="1.75rem"
             style={{
-              background: "linear-gradient(90deg, #020519 0%, #0b0d1c 100%)",
+              background: "linear-gradient(90deg, #25283b 0%, #2d388b 100%)",
               borderRadius: `calc(1.75rem * 0.96)`,
             }}
             className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800"
@@ -130,7 +130,7 @@ export default function Experience() {
                 className="lg:w-32 md:w-20 w-16"
               />
               <div className="lg:ms-5">
-                <h1 className="text-start text-xl md:text-2xl font-bold">
+                <h1 className="text-start text-xl md:text-2xl text-white font-bold">
                   {card.title}
                 </h1>
                 <p className="text-start text-white-100 mt-3 font-semibold">

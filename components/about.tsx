@@ -1,72 +1,77 @@
+"use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion"
+import { useState } from "react";
 
 const About = () => {
+  const [showAll, setShowAll] = useState(false);
+
   return (
-    <section id="about">
-      <motion.div
-        className="w-[94%] px-2 shadow-md shadow-purple md:w-[85%] xl:w-[70%] mx-auto flex flex-col md:flex-row items-start justify-between py-6 md:py-8 xl:py-16 text-gray-200"
-        animate={{
-          y: [0, -10, 0],
-          opacity: [1, 0.95, 1],
-        }}
-        transition={{
-          duration: 6,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
-      >
-        <div className="md:w-[65%]">
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold mb-6 text-green-500">
-            aboutMe(<span className="text-white"> )</span>
-          </h2>
-          <p className="font-[500] text-[12px] md:text-[14px] xl:text-[16px] font-poppins text-gray-300">
-            I’m a dedicated frontend developer specializing in{" "}
-            <span className="text-green-500 font-semibold">
-              React.js (Next.js)
-            </span>
-            , with a strong focus on building high-performance, responsive, and
-            intuitive web applications. My expertise in{" "}
-            <span className="text-green-500 font-semibold">HTML</span>,{" "}
-            <span className="text-green-500 font-semibold">CSS</span>, and{" "}
-            <span className="text-green-500 font-semibold">JavaScript</span>{" "}
-            enables me to craft clean, scalable, and maintainable code that
-            aligns with modern development standards. I’m deeply passionate
-            about creating tailored digital experiences that not only meet but
-            surpass user and client expectations, ensuring every project I
-            deliver is efficient, purposeful, and impactful.
-          </p>
+    <section id="about" className="w-full py-12 md:py-16 text-black">
+      <div className="w-[94%] md:w-[85%] xl:w-[75%] mx-auto flex flex-col md:flex-row gap-10 md:gap-16 items-start">
+        {/* IMAGE */}
+        <div className="md:w-[50%] w-full">
+          <div className="relative w-full aspect-[3/2] bg-gray-200 overflow-hidden">
+            <Image
+              src="/me.jpg"
+              alt="X"
+              width={500}
+              height={300}
+              className="absolute top-0 left-0 object-cover"
+            />
+          </div>
         </div>
 
-        <div className="md:w-[30%] mt-6 md:mt-0 flex justify-center">
-          <motion.div
-            className="bg-[#2b2b2b] rounded-xl p-2 shadow-md w-full max-w-[260px] sm:max-w-[300px] md:max-w-[320px] flex flex-col items-center"
-            animate={{
-              scale: [1, 1.05, 1],
-            }}
-            transition={{
-              duration: 3,
-              ease: "easeInOut",
-              repeat: Infinity,
-            }}
+        {/* TEXT */}
+        <div className="md:w-[50%] w-full">
+          <h2 className="text-[22px] md:text-[26px] xl:text-[30px] font-bold tracking-tight mb-4">
+            About Me
+          </h2>
+
+          {/* Always visible */}
+          <p className="text-[13px] md:text-[14px] leading-relaxed text-gray-800">
+            I’m a frontend engineer focused on building scalable,
+            high-performance web applications with{" "}
+            <span className="font-semibold">React</span> and{" "}
+            <span className="font-semibold">Next.js</span>. My work goes beyond
+            UI implementation — I design systems that are maintainable,
+            predictable, and optimized for real-world production environments.
+          </p>
+
+          <p className="mt-3 text-[13px] md:text-[14px] leading-relaxed text-gray-800">
+            I have a strong foundation in JavaScript internals, asynchronous
+            behavior, and rendering lifecycles, allowing me to reason about
+            performance and eliminate architectural bottlenecks.
+          </p>
+
+          {/* Hidden until expanded */}
+          {showAll && (
+            <>
+              <p className="mt-3 text-[13px] md:text-[14px] leading-relaxed text-gray-800">
+                I work extensively with modern frontend architecture — including
+                server/client boundaries, caching strategies, and API
+                integration patterns — while maintaining a strong focus on
+                accessibility, security, and user experience.
+              </p>
+
+              <p className="mt-3 text-[13px] md:text-[14px] leading-relaxed text-gray-800">
+                Beyond coding, I think in systems: performance budgets,
+                deployment pipelines, and how frontend decisions impact the
+                overall platform. My goal is to build software that scales
+                reliably under real-world usage.
+              </p>
+            </>
+          )}
+
+          {/* Toggle */}
+          <button
+            onClick={() => setShowAll((prev) => !prev)}
+            className="mt-4 text-sm font-semibold underline underline-offset-4"
           >
-            <motion.div
-              className="relative w-[160px] h-[160px] overflow-hidden rounded-md md:rounded-full"
-              animate={{
-                rotate: [0, 2, -2, 0],
-              }}
-              transition={{
-                duration: 5,
-                ease: "easeInOut",
-                repeat: Infinity,
-              }}
-            >
-              <Image src="/me.jpg" alt="X" sizes="auto" fill className="object-contain" />
-            </motion.div>
-          </motion.div>
+            {showAll ? "See less" : "See more"}
+          </button>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

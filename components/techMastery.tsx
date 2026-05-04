@@ -28,7 +28,7 @@ const techStack = [
 
 export default function TechMastery() {
   return (
-    <section className="relative p-4 md:my-8 my-4 bg-black text-white overflow-hidden">
+    <section className="relative p-4 md:my-8 my-4  text-white overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: [0.1, 0.3, 0.1] }}
