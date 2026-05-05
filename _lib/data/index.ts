@@ -1,8 +1,8 @@
 export const projects = [
   {
     id: 1,
-    title: "Chalkboard",
-    des: "BabyDrawForMe is a real-time collaborative whiteboard application built with Next.js and React, powered by the canvas engine of tldraw for interactive drawing and diagramming. The platform enables multiple users to draw, edit, and collaborate simultaneously on a shared infinite canvas using real-time synchronization provided by Liveblocks",
+    title: "Whiteboard",
+    des: "Whiteboard is a real-time collaborative whiteboard application built with Next.js and React, powered by the canvas engine of tldraw for interactive drawing and diagramming. The platform enables multiple users to draw, edit, and collaborate simultaneously on a shared infinite canvas using real-time synchronization provided by Liveblocks",
     img: "/draw.png",
     iconLists: ["/next.svg", "/ts.svg", "/stream.svg", "/c.svg"],
     link: "https://x-draw-flow.vercel.app",
