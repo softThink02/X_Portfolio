@@ -4,53 +4,53 @@ import { useState, useRef, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { workExperience } from "@/_lib/data";
 import { Button } from "./ui/MovingBorders";
-import Modal from "../_lib/shared/modal";
+// import Modal from "../_lib/shared/modal";
 import { LocalStorage } from "@/_lib/utils";
 import Image from "next/image";
 
 export default function Experience() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
-  async function checkClipboardForEmail() {
-    if (typeof navigator === "undefined" || !navigator.clipboard?.readText)
-      return true;
-    try {
-      const text = await navigator.clipboard.readText();
-      if (!text.trim()) return true;
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return !emailPattern.test(text.trim());
-    } catch {
-      return true;
-    }
-  }
+  // async function checkClipboardForEmail() {
+  //   if (typeof navigator === "undefined" || !navigator.clipboard?.readText)
+  //     return true;
+  //   try {
+  //     const text = await navigator.clipboard.readText();
+  //     if (!text.trim()) return true;
+  //     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //     return !emailPattern.test(text.trim());
+  //   } catch {
+  //     return true;
+  //   }
+  // }
 
-  useEffect(() => {
-    if (LocalStorage("get", { key: "emailCopied" })) return;
-    if (typeof window === "undefined" || !("IntersectionObserver" in window))
-      return;
-    const alreadyShown = sessionStorage.getItem("emailPopupShown");
-    if (alreadyShown) return;
+  // useEffect(() => {
+  //   if (LocalStorage("get", { key: "emailCopied" })) return;
+  //   if (typeof window === "undefined" || !("IntersectionObserver" in window))
+  //     return;
+  //   const alreadyShown = sessionStorage.getItem("emailPopupShown");
+  //   if (alreadyShown) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting) {
-          setTimeout(async () => {
-            const allowed = await checkClipboardForEmail();
-            if (allowed) {
-              setShowModal(true);
-              sessionStorage.setItem("emailPopupShown", "true");
-            }
-          }, 2000);
-        }
-      },
-      { threshold: 0.5 },
-    );
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       const entry = entries[0];
+  //       if (entry.isIntersecting) {
+  //         setTimeout(async () => {
+  //           const allowed = await checkClipboardForEmail();
+  //           if (allowed) {
+  //             setShowModal(true);
+  //             sessionStorage.setItem("emailPopupShown", "true");
+  //           }
+  //         }, 2000);
+  //       }
+  //     },
+  //     { threshold: 0.5 },
+  //   );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
+  //   if (sectionRef.current) observer.observe(sectionRef.current);
+  //   return () => observer.disconnect();
+  // }, []);
 
   return (
     <section
@@ -58,7 +58,7 @@ export default function Experience() {
       ref={sectionRef}
       className="w-full py-12 px-4 md:px-8"
     >
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showModal && (
           <Modal isOpen={showModal} onCloseAction={() => setShowModal(false)}>
             <motion.div
@@ -106,7 +106,7 @@ export default function Experience() {
             </motion.div>
           </Modal>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       <h1 className="dark:text-white lg:heading text-[20px] text-center md:text-[28px] lg:text-[32px] xl:text-[48px] text-black">
         My <span className="text-purple">work experience</span>
