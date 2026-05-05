@@ -4,8 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { workExperience } from "@/_lib/data";
 import { Button } from "./ui/MovingBorders";
-import Modal from "./shared/modal";
-import { LocalStorage } from "@/_lib/utils"
+import Modal from "../_lib/shared/modal";
+import { LocalStorage } from "@/_lib/utils";
 import Image from "next/image";
 
 export default function Experience() {
@@ -45,7 +45,7 @@ export default function Experience() {
           }, 2000);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);

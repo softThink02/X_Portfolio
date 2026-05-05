@@ -1,6 +1,12 @@
 
 import {HeroHighlight} from './ui/hero-highlight'
-import ProfileCard from "./profileCard";
+import dynamic from 'next/dynamic';
+import { DivLoader } from './loaderComp';
+
+const ProfileCard = dynamic(() => import('./profileCard'), {
+  ssr: false,
+  loading: () => <DivLoader />, 
+});
 
 
 const Hero = () => {

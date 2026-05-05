@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./provider";
+import ThemeProvider from "./provider";
 import ClientLayout from "@/components/clientLayout";
 
 const poppins = Poppins({
@@ -26,12 +26,7 @@ export default function RootLayout({
         <link rel="icon" href="/avatar.jpeg" sizes="any" />
       </head>
       <body className={poppins.className}>
-        <ThemeProvider
-          attribute="class"
-          // defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider>
           <ClientLayout>{children}</ClientLayout>
         </ThemeProvider>
       </body>

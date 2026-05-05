@@ -4,7 +4,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { socialMedia } from "@/_lib/data";
 import MagicButton from "./MagicButton";
 import { motion } from "framer-motion";
-import { FooterHeader } from "./shared/animate";
+import { FooterHeader } from "../_lib/shared/animate";
 import Image from "next/image";
 
 const Footer = () => {
@@ -23,7 +23,12 @@ const Footer = () => {
     >
       <div className="absolute inset-0 -z-10 opacity-40">
         <div className="w-full h-full relative">
-          <Image src="/footer-grid.svg" alt="grid" fill className="object-cover" />
+          <Image
+            src="/footer-grid.svg"
+            alt="grid"
+            fill
+            className="object-cover"
+          />
         </div>
       </div>
 
