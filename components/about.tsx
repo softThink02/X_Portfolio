@@ -9,7 +9,6 @@ const About = () => {
   return (
     <section id="about" className="w-full py-12 md:py-16 text-black">
       <div className="w-[94%] md:w-[85%] xl:w-[75%] mx-auto flex flex-col md:flex-row gap-10 md:gap-16 items-start">
-        {/* IMAGE */}
         <div className="md:w-[50%] w-full">
           <div className="relative w-full aspect-[3/2] bg-gray-200 overflow-hidden">
             <Image
@@ -22,13 +21,11 @@ const About = () => {
           </div>
         </div>
 
-        {/* TEXT */}
         <div className="md:w-[50%] w-full">
           <h2 className="text-[22px] md:text-[26px] xl:text-[30px] font-bold tracking-tight mb-4">
             About Me
           </h2>
 
-          {/* Always visible */}
           <p className="text-[13px] md:text-[14px] leading-relaxed text-gray-800">
             I’m a frontend engineer focused on building scalable,
             high-performance web applications with{" "}
@@ -44,7 +41,6 @@ const About = () => {
             performance and eliminate architectural bottlenecks.
           </p>
 
-          {/* Hidden until expanded */}
           {showAll && (
             <>
               <p className="mt-3 text-[13px] md:text-[14px] leading-relaxed text-gray-800">
@@ -63,7 +59,6 @@ const About = () => {
             </>
           )}
 
-          {/* Toggle */}
           <button
             onClick={() => setShowAll((prev) => !prev)}
             className="mt-4 text-sm font-semibold underline underline-offset-4"

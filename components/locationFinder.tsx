@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { LocalStorage } from "@/_lib/utils";
 import { motion } from "framer-motion";
-import { FooterHeader } from "./shared/animate";
+import { FooterHeader } from "../_lib/shared/animate";
 import Image from "next/image";
 
 export default function WelcomeUser() {

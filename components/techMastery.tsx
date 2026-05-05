@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Code2, Zap, Cpu, Terminal } from "lucide-react";
+import { memo } from "react";
 
 const techStack = [
   {
@@ -26,7 +27,7 @@ const techStack = [
   },
 ];
 
-export default function TechMastery() {
+function TechMastery() {
   return (
     <section className="relative p-4 md:my-8 my-4  text-white overflow-hidden">
       <motion.div
@@ -95,3 +96,5 @@ export default function TechMastery() {
     </section>
   );
 }
+
+export default memo(TechMastery);
