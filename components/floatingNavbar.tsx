@@ -55,7 +55,7 @@ export default function FloatingDockBar() {
       animate={{
         opacity: visible ? 1 : 0,
       }}
-      initial={{opacity: 1 }}
+      initial={{ opacity: 1 }}
       transition={{
         duration: 0.25,
         ease: "easeInOut",
@@ -89,9 +89,10 @@ export default function FloatingDockBar() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
           // href="/blog"
+          href="https://medium.com/@softthink02"
           className="rounded-full bg-black px-4 py-2 text-sm font-semibold text-white shadow-md transition dark:bg-white dark:text-black"
         >
-          No Blog
+          My Blog
         </motion.a>
       </div>
     </motion.div>
