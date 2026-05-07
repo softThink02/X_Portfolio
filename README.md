@@ -123,12 +123,12 @@ Advanced UI/UX motion systems
 ## 📦 Available Scripts
 
 ```bash
-yarn dev        # Start development server
-yarn build      # Build for production
-yarn start      # Run production server
-yarn lint       # Run ESLint checks
-yarn deploy     # Deploy to Vercel (production)
-yarn analyze    # Analyze bundle size
+npm dev        # Start development server
+npm build      # Build for production
+npm start      # Run production server
+npm lint       # Run ESLint checks
+npm deploy     # Deploy to Vercel (production)
+npm analyze    # Analyze bundle size
 ```
 
 ### 🧑‍💻 Author
