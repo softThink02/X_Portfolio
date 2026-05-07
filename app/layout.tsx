@@ -7,12 +7,13 @@ import ClientLayout from "@/components/clientLayout";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  display: "swap", // production standard
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "X_think's Portfolio",
-  description: "Modern Nextjs Portfolio",
+  title: "David_X | Software Engineer Portfolio",
+  description:
+    "Software Engineer specializing in React, Next.js, and TypeScript. Building scalable full-stack applications with Node.js, modern UI systems, authentication flows, API design, and production-grade frontend architectures.",
 };
 
 export default function RootLayout({
