@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function RecentProjects() {
   return (
     <section className="py-16 w-[100%] md:w-[80%] mx-auto my-0">
-      <h1 className="dark:text-white lg:heading text-[20px] mb-2 lg:mb-6 text-center md:text-[28px] lg:text-[32px] xl:text-[48px] text-black">
+      <h1 className="dark:text-white text-5xl font-extrabold tracking-tight lg:heading text-[20px] mb-2 lg:mb-4 text-center md:text-[28px] lg:text-[32px] xl:text-[48px] text-black">
         Recent <span className="text-purple">Projects</span>
       </h1>
 
@@ -49,9 +49,7 @@ export default function RecentProjects() {
               <h3 className="text-lg font-semibold text-white">
                 {project.title}
               </h3>
-              <p className="text-white text-sm line-clamp-3">
-                {project.des}
-              </p>
+              <p className="text-white text-sm line-clamp-3">{project.des}</p>
 
               <div className="flex flex-wrap gap-3 mt-3">
                 {project.iconLists.map((icon, idx) => (

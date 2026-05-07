@@ -7,6 +7,8 @@ import FloatingDockBar from "@/components/floatingNavbar";
 import About from "@/components/about";
 import dynamic from "next/dynamic";
 import { DivLoader } from "@/components/loaderComp";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallback from "@/components/error/errorFallback";
 
 const TechMastery = dynamic(() => import("@/components/techMastery"), {
   ssr: false,
@@ -24,9 +26,13 @@ const Home = () => {
       <div className="max-w-7xl w-full">
         <FloatingDockBar />
         <Hero />
-        <TechMastery />
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <TechMastery />
+        </ErrorBoundary>
         <About />
-        <RecentProjects />
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <RecentProjects />
+        </ErrorBoundary>
         <Experience />
         <Footer />
       </div>

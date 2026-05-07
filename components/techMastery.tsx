@@ -28,6 +28,7 @@ const techStack = [
 ];
 
 function TechMastery() {
+
   return (
     <section className="relative p-4 md:my-8 my-4  text-white overflow-hidden">
       <motion.div
