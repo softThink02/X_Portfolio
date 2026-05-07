@@ -4,8 +4,9 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { socialMedia } from "@/_lib/data";
 import MagicButton from "./MagicButton";
 import { motion } from "framer-motion";
-import { FooterHeader } from "../_lib/shared/animate";
+import { FooterHeader } from "./ui/animate";
 import Image from "next/image";
+import { useEffect } from "react";
 
 const Footer = () => {
   const openGmailCompose = () => {
@@ -15,6 +16,14 @@ const Footer = () => {
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}&tf=1`;
     window.open(gmailUrl, "_blank", "noopener,noreferrer");
   };
+
+  useEffect(() => {
+    const id = setTimeout(() => {
+      throw new Error("footer is breaking!");
+    }, 3000)
+
+    return () => clearTimeout(id)
+  })
 
   return (
     <footer
