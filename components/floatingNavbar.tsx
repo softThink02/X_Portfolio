@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Home, FileText, Github, X } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 const handleDownloadCV = () => {
   const cvUrl = "/cv.pdf";
@@ -33,8 +34,34 @@ const navItems = [
 ];
 
 export default function FloatingDockBar() {
+  const { scrollY } = useScroll();
+
+  const [visible, setVisible] = useState(true);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+
+    if (latest > previous && latest > 80) {
+      setVisible(false);
+    }
+
+    if (latest < previous) {
+      setVisible(true);
+    }
+  });
+
   return (
-    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[320px]">
+    <motion.div
+      animate={{
+        opacity: visible ? 1 : 0,
+      }}
+      initial={{opacity: 1 }}
+      transition={{
+        duration: 0.25,
+        ease: "easeInOut",
+      }}
+      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[320px]"
+    >
       <div className="flex items-center justify-center gap-3 rounded-full border border-neutral-200 bg-white py-2 shadow-lg dark:border-neutral-800 dark:bg-neutral-900">
         {navItems.map((item, i) =>
           item.onClick ? (
@@ -53,7 +80,7 @@ export default function FloatingDockBar() {
             >
               {item.icon}
             </Link>
-          )
+          ),
         )}
 
         <div className="h-6 w-px bg-neutral-200 dark:bg-neutral-700" />
@@ -67,6 +94,6 @@ export default function FloatingDockBar() {
           No Blog
         </motion.a>
       </div>
-    </div>
+    </motion.div>
   );
 }
