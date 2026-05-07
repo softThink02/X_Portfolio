@@ -6,7 +6,7 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
 import { useEffect, useState } from "react";
-import { FooterHeader } from "../_lib/shared/animate";
+import { FooterHeader } from "./ui/animate";
 
 export default function ProfileCard() {
   const [showText, setShowText] = useState(true);
