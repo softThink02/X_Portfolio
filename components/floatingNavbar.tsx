@@ -7,7 +7,7 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { FiTwitter } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import { CiLight } from "react-icons/ci";
-import {ThemeContext} from '@/app/provider'
+import { ThemeContext } from "@/app/provider";
 
 const handleDownloadCV = () => {
   const cvUrl = "/cv.pdf";
@@ -36,11 +36,7 @@ export default function FloatingDockBar() {
 
   const themeContext = useContext(ThemeContext);
 
-  if (!themeContext) {
-    return null
-  }
-
-  const {toggleTheme} = themeContext
+  const toggleTheme = themeContext?.toggleTheme;
 
   const navItems = useMemo(() => {
     return [
@@ -67,7 +63,9 @@ export default function FloatingDockBar() {
         onClick: toggleTheme,
       },
     ];
-  }, []);
+  }, [toggleTheme]);
+
+  if (!themeContext) return null;
 
   return (
     <motion.div
@@ -94,7 +92,7 @@ export default function FloatingDockBar() {
           ) : (
             <Link
               key={i}
-              href={item.href}
+              href={item.href || ""}
               className="flex items-center justify-center rounded-full p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
             >
               {item.icon}
