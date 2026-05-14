@@ -47,6 +47,22 @@ export const projects = [
     iconLists: ["/re.svg", "/fm.svg", "/ts.svg", "/fm.svg"],
     link: "http://skill-finder.net/",
   },
+  {
+    id: 7,
+    title: "Blog Platform",
+    des: "A modern production-ready blog platform built with Next.js 15, React 19, Wisp CMS, Tailwind CSS, and TypeScript — featuring static generation, dynamic content rendering, SEO optimization, RSS support, dark mode, and scalable",
+    img: "/blog.png",
+    iconLists: ["/next.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    link: "https://blog-platform-six-coral.vercel.app/",
+  },
+  {
+    id: 8,
+    title: "Secure Authentication",
+    des: "A modern full-stack authentication system built with Next.js 15, Prisma, MongoDB, JWT (jose), and Argon2. Features secure login, refresh token rotation, and robust form validation with React Hook Form and Zod.",
+    img: "/secure-auth.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
+    link: "https://secure-authentication-kappa.vercel.app/",
+  },
 ];
 
 export const workExperience = [
