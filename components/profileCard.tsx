@@ -67,7 +67,12 @@ export default function ProfileCard() {
         }}
         className="rounded-full relative w-[120px] h-[120px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] xl:w-[180px] xl:h-[180px] overflow-hidden shadow-[0_0_60px_10px_rgba(147,51,234,0.3)]"
       >
-        <Image src="/myEmoji.jpg" sizes="auto" alt="X Avatar" fill />
+        <Image
+          src="https://res.cloudinary.com/dugi9xncx/image/upload/v1778795082/myEmoji_uu5v2x.jpg"
+          sizes="auto"
+          alt="X Avatar"
+          fill
+        />
       </motion.div>
 
       <motion.div
@@ -93,7 +98,7 @@ export default function ProfileCard() {
       >
         Hi <FooterHeader variant="handSpan">👋</FooterHeader>! I&apos;m{" "}
         <span className="text-purple-500">David X</span>, a React (Next.js)
-        Senior Frontend Developer.
+        Frontend Developer.
       </motion.div>
 
       <motion.div

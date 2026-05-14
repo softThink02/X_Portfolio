@@ -24,7 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/avatar.jpeg" sizes="any" />
+        <link
+          rel="icon"
+          href="https://res.cloudinary.com/dugi9xncx/image/upload/v1778795082/myEmoji_uu5v2x.jpg"
+          sizes="any"
+        />
       </head>
       <body className={poppins.className}>
         <ThemeProvider>
