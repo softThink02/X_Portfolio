@@ -1,6 +1,10 @@
-"use client";
-
-import { createContext, useEffect, useState, useMemo } from "react";
+import {
+  createContext,
+  useEffect,
+  useState,
+  useMemo,
+  useCallback,
+} from "react";
 
 type ToggleThemeType = {
   toggleTheme: () => void;
@@ -26,8 +30,9 @@ export default function ThemeProvider({
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const toggleTheme = () =>
+  const toggleTheme = useCallback(() => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  }, []);
 
   const value = useMemo(() => ({ toggleTheme, theme }), [toggleTheme, theme]);
 

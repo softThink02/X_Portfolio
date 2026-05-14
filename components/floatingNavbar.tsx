@@ -56,13 +56,13 @@ export default function FloatingDockBar() {
         label: "GitHub",
       },
       {
-        icon: <FileText className="h-7 w-7 font-bold" />,
+        icon: <FileText className="h-5 w-5" />,
         href: "/docs",
         label: "Docs",
         onClick: handleDownloadCV,
       },
       {
-        icon: <CiLight className="h-5 w-5" />,
+        icon: <CiLight className="h-6 w-6" />,
         label: "theme",
         onClick: toggleTheme,
       },
