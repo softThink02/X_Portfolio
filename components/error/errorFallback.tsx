@@ -28,7 +28,7 @@ export default function ErrorFallback({
 
       Sentry.captureException(error);
     });
-  }, [error]);
+  }, [error, attempt]);
 
   const handleRetry = () => {
     if (attempt >= maxRetries) return;

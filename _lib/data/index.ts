@@ -96,8 +96,8 @@ export const workExperience = [
   },
   {
     id: 5,
-    title: "Frontend Lead Developer - Estate-Ai",
-    desc: "Work on contract, Frontend Lead Developer at Estate-AI (December 2025 – Present), delivering user-facing features through API integration, scalable component architecture, and state management. Handled backend integration, testing, performance optimization, code reviews, and bug fixes to ensure a smooth, reliable user experience in a fast-paced environment.",
+    title: "Freelance - Multiple Projects",
+    desc: "Built and contributed to products like Estate-AI, GozRider, Animax, and other NDA-protected web applications. Focused on frontend architecture, API integration, authentication, state management, UI development, and performance optimization across freelance and startup projects.",
     className: "md:col-span-2",
     thumbnail: "/visual.svg",
   },

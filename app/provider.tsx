@@ -1,13 +1,19 @@
-"use client";
+'use client'
 
-import { createContext, useEffect, useState, useMemo } from "react";
+import {
+  createContext,
+  useEffect,
+  useState,
+  useMemo,
+  useCallback,
+} from "react";
 
 type ToggleThemeType = {
   toggleTheme: () => void;
   theme: "light" | "dark";
 };
 
-export const themeContext = createContext<ToggleThemeType | undefined>(
+export const ThemeContext = createContext<ToggleThemeType | undefined>(
   undefined,
 );
 
@@ -26,12 +32,13 @@ export default function ThemeProvider({
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const toggleTheme = () =>
+  const toggleTheme = useCallback(() => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  }, []);
 
   const value = useMemo(() => ({ toggleTheme, theme }), [toggleTheme, theme]);
 
   return (
-    <themeContext.Provider value={value}>{children}</themeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 }

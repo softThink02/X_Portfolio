@@ -1,9 +1,13 @@
 "use client";
 
-import { Home, FileText, Github, X } from "lucide-react";
+import { Home, FileText } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useMemo, useContext } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { FiTwitter } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
+import { CiLight } from "react-icons/ci";
+import { ThemeContext } from "@/app/provider";
 
 const handleDownloadCV = () => {
   const cvUrl = "/cv.pdf";
@@ -12,26 +16,6 @@ const handleDownloadCV = () => {
   link.download = "X_CV.pdf";
   link.click();
 };
-
-const navItems = [
-  { icon: <Home className="h-5 w-5" />, href: "/", label: "Home" },
-  {
-    icon: <X className="h-5 w-5" />,
-    href: "https://twitter.com/SThink02",
-    label: "X",
-  },
-  {
-    icon: <Github className="h-5 w-5" />,
-    href: "https://github.com/softThink02",
-    label: "GitHub",
-  },
-  {
-    icon: <FileText className="h-5 w-5" />,
-    href: "/docs",
-    label: "Docs",
-    onClick: handleDownloadCV,
-  },
-];
 
 export default function FloatingDockBar() {
   const { scrollY } = useScroll();
@@ -50,6 +34,39 @@ export default function FloatingDockBar() {
     }
   });
 
+  const themeContext = useContext(ThemeContext);
+
+  const toggleTheme = themeContext?.toggleTheme;
+
+  const navItems = useMemo(() => {
+    return [
+      { icon: <Home className="h-5 w-5" />, href: "/", label: "Home" },
+      {
+        icon: <FiTwitter className="h-5 w-5" />,
+        href: "https://twitter.com/SThink02",
+        label: "X",
+      },
+      {
+        icon: <FaGithub className="h-5 w-5" />,
+        href: "https://github.com/softThink02",
+        label: "GitHub",
+      },
+      {
+        icon: <FileText className="h-5 w-5" />,
+        href: "/docs",
+        label: "Docs",
+        onClick: handleDownloadCV,
+      },
+      {
+        icon: <CiLight className="h-6 w-6" />,
+        label: "theme",
+        onClick: toggleTheme,
+      },
+    ];
+  }, [toggleTheme]);
+
+  if (!themeContext) return null;
+
   return (
     <motion.div
       animate={{
@@ -62,7 +79,7 @@ export default function FloatingDockBar() {
       }}
       className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[320px]"
     >
-      <div className="flex items-center justify-center gap-3 rounded-full border border-neutral-200 bg-white py-2 shadow-lg dark:border-neutral-800 dark:bg-neutral-900">
+      <div className="flex items-center justify-center md:gap-3 gap-[10px] rounded-full border border-neutral-200 bg-white py-2 shadow-lg dark:border-neutral-800 dark:bg-neutral-900">
         {navItems.map((item, i) =>
           item.onClick ? (
             <button
@@ -75,7 +92,7 @@ export default function FloatingDockBar() {
           ) : (
             <Link
               key={i}
-              href={item.href}
+              href={item.href || ""}
               className="flex items-center justify-center rounded-full p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
             >
               {item.icon}
@@ -92,7 +109,7 @@ export default function FloatingDockBar() {
           href="https://medium.com/@softthink02"
           className="rounded-full bg-black px-4 py-2 text-sm font-semibold text-white shadow-md transition dark:bg-white dark:text-black"
         >
-          My Blog
+          Blog
         </motion.a>
       </div>
     </motion.div>
