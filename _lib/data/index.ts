@@ -71,42 +71,36 @@ export const workExperience = [
     title: "Frontend Engineer Intern",
     desc: "Interned at Zuri, contributing to the development of the Animax Animation Library using React.js, enhancing interactivity, year 2022",
     className: "md:col-span-2",
-    thumbnail: "/workspace.svg",
   },
   {
     id: 2,
     title: "Frontend Engineer Intern - Genesys Tech Hub",
     desc: "Gained hands-on experience in building dynamic data visualization interfaces and interactive dashboards, enhancing user insights through React and modern UI libraries, year 2023",
     className: "md:col-span-2",
-    thumbnail: "/visual.svg",
   },
   {
     id: 3,
     title: "Frontend Developer - Jodna Technologies",
     desc: "Currently working as a Frontend Developer at Jodna Technologies (September 2024 – Present), where I’ve contributed to building new products and maintaining existing systems to enhance performance, scalability, and user experience.",
     className: "md:col-span-2",
-    thumbnail: "/maintainance.svg",
   },
   {
     id: 4,
     title: "Frontend Lead Developer - Pozse Fashion Hub",
     desc: "Working as a Frontend Developer at Pozse Fashion Hub (August 2025 – Present), focusing on building and maintaining user-facing features, optimizing performance, and ensuring a seamless shopping experience through modern frontend technologies.",
     className: "md:col-span-2",
-    thumbnail: "/pozse.svg",
   },
   {
     id: 5,
     title: "Freelance - Multiple Projects",
     desc: "Built and contributed to products like Estate-AI, GozRider, Animax, and other NDA-protected web applications. Focused on frontend architecture, API integration, authentication, state management, UI development, and performance optimization across freelance and startup projects.",
     className: "md:col-span-2",
-    thumbnail: "/visual.svg",
   },
   {
     id: 6,
     title: "Frontend Lead Developer - AnambraTechies",
     desc: "Serving as Frontend Lead Developer at AnambraTechies (January 2026 – Present), leading a growing frontend community of over 630 developers. Responsible for guiding technical direction, mentoring members, and enforcing best practices across projects. Driving knowledge sharing through structured sessions, code reviews, and collaborative builds while maintaining high standards in scalable architecture, performance, and modern frontend development workflows.",
     className: "md:col-span-2",
-    thumbnail: "/workspace.svg",
   },
 ];
 
