@@ -21,7 +21,7 @@ export default function ProfileCard() {
         animate={{ opacity: 1, scale: 1 }}
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.5 }}
-        className="rounded-full relative w-[140px] h-[140px] overflow-hidden shadow-[0_0_40px_rgba(147,51,234,0.25)]"
+        className="rounded-full relative w-[140px] h-[140px] md:w-[160px] md:h-[160px] overflow-hidden shadow-[0_0_40px_rgba(147,51,234,0.25)]"
       >
         <Image
           src="https://res.cloudinary.com/dugi9xncx/image/upload/v1778795082/myEmoji_uu5v2x.jpg"
