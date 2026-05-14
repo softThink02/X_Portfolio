@@ -14,7 +14,7 @@ type projects = {
 export const MobileProjectsView = ({ projects }: { projects: projects }) => {
   return (
     <div className="relative flex md:hidden overflow-x-hidden mt-3 px-2">
-      <div className="flex gap-2 overflow-x-auto pb-2 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-x-hidden">
+      <div className="flex gap-1 overflow-x-auto pb-2 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-x-hidden">
         {projects.map((project, i) => (
           <motion.div
             key={project.id}

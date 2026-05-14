@@ -1,9 +1,11 @@
 "use client";
 
-import { Home, FileText, Github, X } from "lucide-react";
+import { Home, FileText} from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { FiTwitter } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
 
 const handleDownloadCV = () => {
   const cvUrl = "/cv.pdf";
@@ -16,12 +18,12 @@ const handleDownloadCV = () => {
 const navItems = [
   { icon: <Home className="h-5 w-5" />, href: "/", label: "Home" },
   {
-    icon: <X className="h-5 w-5" />,
+    icon: <FiTwitter className="h-5 w-5" />,
     href: "https://twitter.com/SThink02",
     label: "X",
   },
   {
-    icon: <Github className="h-5 w-5" />,
+    icon: <FaGithub className="h-5 w-5" />,
     href: "https://github.com/softThink02",
     label: "GitHub",
   },
