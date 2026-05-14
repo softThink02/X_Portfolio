@@ -41,7 +41,7 @@ const Footer = () => {
         </FooterHeader>
         <FooterHeader
           variant="p"
-          className="text-white-200 md:mt-8 mt-5 mb-6 text-center px-[6px]"
+          className="dark:text-white-200 text-black-300 md:mt-8 mt-5 mb-6 text-center px-[6px]"
         >
           Get in touch with me today and let&apos;s discuss how I can help you
           achieve your goals.

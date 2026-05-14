@@ -56,7 +56,7 @@ export default function FloatingDockBar() {
         label: "GitHub",
       },
       {
-        icon: <FileText className="h-6 w-6" />,
+        icon: <FileText className="h-7 w-7 font-bold" />,
         href: "/docs",
         label: "Docs",
         onClick: handleDownloadCV,
@@ -81,7 +81,7 @@ export default function FloatingDockBar() {
       }}
       className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[320px]"
     >
-      <div className="flex items-center justify-center gap-3 rounded-full border border-neutral-200 bg-white py-2 shadow-lg dark:border-neutral-800 dark:bg-neutral-900">
+      <div className="flex items-center justify-center md:gap-3 gap-[10px] rounded-full border border-neutral-200 bg-white py-2 shadow-lg dark:border-neutral-800 dark:bg-neutral-900">
         {navItems.map((item, i) =>
           item.onClick ? (
             <button
@@ -111,7 +111,7 @@ export default function FloatingDockBar() {
           href="https://medium.com/@softthink02"
           className="rounded-full bg-black px-4 py-2 text-sm font-semibold text-white shadow-md transition dark:bg-white dark:text-black"
         >
-          My Blog
+          Blog
         </motion.a>
       </div>
     </motion.div>

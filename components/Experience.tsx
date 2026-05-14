@@ -26,20 +26,19 @@ export default function Experience() {
             borderRadius="1.75rem"
             style={{
               // background: "linear-gradient(90deg, #6a6b74 0%, #16161a 100%)",
-              background: "black",
               borderRadius: `calc(1.75rem * 0.96)`,
             }}
-            className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+            className="flex-1 text-black dark:text-white border-neutral-200 dark:bg-transparent dark:border-slate-800"
           >
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
               <div className="lg:w-32 relative md:w-20 w-16">
                 <Image src={card.thumbnail} alt={card.title} fill />
               </div>
               <div className="lg:ms-5">
-                <h1 className="text-start text-xl md:text-2xl text-white font-bold">
+                <h1 className="text-start text-xl md:text-2xl text-black dark:text-white font-bold">
                   {card.title}
                 </h1>
-                <p className="text-start text-white-100 mt-3 font-semibold">
+                <p className="text-start dark:text-white-100 mt-3 text-black font-semibold">
                   {card.desc}
                 </p>
               </div>
