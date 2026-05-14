@@ -1,11 +1,13 @@
 "use client";
 
-import { Home, FileText} from "lucide-react";
+import { Home, FileText } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useMemo, useContext } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { FiTwitter } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
+import { CiLight } from "react-icons/ci";
+import {ThemeContext} from '@/app/provider'
 
 const handleDownloadCV = () => {
   const cvUrl = "/cv.pdf";
@@ -14,26 +16,6 @@ const handleDownloadCV = () => {
   link.download = "X_CV.pdf";
   link.click();
 };
-
-const navItems = [
-  { icon: <Home className="h-5 w-5" />, href: "/", label: "Home" },
-  {
-    icon: <FiTwitter className="h-5 w-5" />,
-    href: "https://twitter.com/SThink02",
-    label: "X",
-  },
-  {
-    icon: <FaGithub className="h-5 w-5" />,
-    href: "https://github.com/softThink02",
-    label: "GitHub",
-  },
-  {
-    icon: <FileText className="h-5 w-5" />,
-    href: "/docs",
-    label: "Docs",
-    onClick: handleDownloadCV,
-  },
-];
 
 export default function FloatingDockBar() {
   const { scrollY } = useScroll();
@@ -51,6 +33,41 @@ export default function FloatingDockBar() {
       setVisible(true);
     }
   });
+
+  const themeContext = useContext(ThemeContext);
+
+  if (!themeContext) {
+    return null
+  }
+
+  const {toggleTheme} = themeContext
+
+  const navItems = useMemo(() => {
+    return [
+      { icon: <Home className="h-5 w-5" />, href: "/", label: "Home" },
+      {
+        icon: <FiTwitter className="h-5 w-5" />,
+        href: "https://twitter.com/SThink02",
+        label: "X",
+      },
+      {
+        icon: <FaGithub className="h-5 w-5" />,
+        href: "https://github.com/softThink02",
+        label: "GitHub",
+      },
+      {
+        icon: <FileText className="h-6 w-6" />,
+        href: "/docs",
+        label: "Docs",
+        onClick: handleDownloadCV,
+      },
+      {
+        icon: <CiLight className="h-5 w-5" />,
+        label: "theme",
+        onClick: toggleTheme,
+      },
+    ];
+  }, []);
 
   return (
     <motion.div

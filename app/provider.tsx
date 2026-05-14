@@ -7,7 +7,7 @@ type ToggleThemeType = {
   theme: "light" | "dark";
 };
 
-export const themeContext = createContext<ToggleThemeType | undefined>(
+export const ThemeContext = createContext<ToggleThemeType | undefined>(
   undefined,
 );
 
@@ -32,6 +32,6 @@ export default function ThemeProvider({
   const value = useMemo(() => ({ toggleTheme, theme }), [toggleTheme, theme]);
 
   return (
-    <themeContext.Provider value={value}>{children}</themeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 }
