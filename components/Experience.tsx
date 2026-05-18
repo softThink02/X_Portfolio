@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { workExperience } from "@/_lib/data";
 import { Button } from "./ui/MovingBorders";
-import Image from "next/image";
 
 export default function Experience() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
