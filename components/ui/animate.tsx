@@ -1,4 +1,4 @@
-import {m } from "framer-motion";
+import { m } from "motion/react";
 
 export const FooterHeader = ({
   className,

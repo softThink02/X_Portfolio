@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "motion/react";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
