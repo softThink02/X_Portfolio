@@ -3,7 +3,13 @@
 import { Home, FileText } from "lucide-react";
 import Link from "next/link";
 import { useContext, useMemo } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  m,
+  useScroll,
+  useTransform,
+  LazyMotion,
+  domAnimation,
+} from "framer-motion";
 import { FiTwitter } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import { CiLight } from "react-icons/ci";
@@ -23,10 +29,6 @@ export default function FloatingDockBar() {
   const { toggleTheme } = themeContext;
   const { scrollY } = useScroll();
 
-  /**
-   * 🔥 PURE MOTION (NO REACT STATE)
-   * opacity is derived directly from scroll position
-   */
   const opacity = useTransform(scrollY, [0, 80, 120], [1, 1, 0]);
 
   const navItems = useMemo(
@@ -58,43 +60,45 @@ export default function FloatingDockBar() {
   );
 
   return (
-    <motion.div
-      style={{ opacity }}
-      initial={{ opacity: 1 }}
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[320px]"
-    >
-      <div className="flex items-center justify-center md:gap-3 gap-[10px] rounded-full border border-neutral-200 bg-white py-2 shadow-lg dark:border-neutral-800 dark:bg-neutral-900">
-        {navItems.map((item, i) =>
-          item.onClick ? (
-            <button
-              key={i}
-              onClick={item.onClick}
-              className="flex items-center justify-center rounded-full p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-            >
-              {item.icon}
-            </button>
-          ) : (
-            <Link
-              key={i}
-              href={item.href || "#"}
-              className="flex items-center justify-center rounded-full p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-            >
-              {item.icon}
-            </Link>
-          ),
-        )}
+    <LazyMotion features={domAnimation}>
+      <m.div
+        style={{ opacity }}
+        initial={{ opacity: 1 }}
+        className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[320px]"
+      >
+        <div className="flex items-center justify-center md:gap-3 gap-[10px] rounded-full border border-neutral-200 bg-white py-2 shadow-lg dark:border-neutral-800 dark:bg-neutral-900">
+          {navItems.map((item, i) =>
+            item.onClick ? (
+              <button
+                key={i}
+                onClick={item.onClick}
+                className="flex items-center justify-center rounded-full p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+              >
+                {item.icon}
+              </button>
+            ) : (
+              <Link
+                key={i}
+                href={item.href || "#"}
+                className="flex items-center justify-center rounded-full p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+              >
+                {item.icon}
+              </Link>
+            ),
+          )}
 
-        <div className="h-6 w-px bg-neutral-200 dark:bg-neutral-700" />
+          <div className="h-6 w-px bg-neutral-200 dark:bg-neutral-700" />
 
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
-          href="https://medium.com/@softthink02"
-          className="rounded-full bg-black px-4 py-2 text-sm font-semibold text-white shadow-md dark:bg-white dark:text-black"
-        >
-          Blog
-        </motion.a>
-      </div>
-    </motion.div>
+          <m.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            href="https://medium.com/@softthink02"
+            className="rounded-full bg-black px-4 py-2 text-sm font-semibold text-white shadow-md dark:bg-white dark:text-black"
+          >
+            Blog
+          </m.a>
+        </div>
+      </m.div>
+    </LazyMotion>
   );
 }

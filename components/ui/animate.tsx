@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 export const FooterHeader = ({
   className,
@@ -11,7 +11,7 @@ export const FooterHeader = ({
 }) => {
   if (variant === "h1") {
     return (
-      <motion.h1
+      <m.h1
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         exit={{ x: 100, opacity: 0 }}
@@ -20,12 +20,12 @@ export const FooterHeader = ({
         className={className}
       >
         {children}
-      </motion.h1>
+      </m.h1>
     );
   }
   if (variant === "p") {
     return (
-      <motion.p
+      <m.p
         initial={{ x: 100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         exit={{ x: 100, opacity: 0 }}
@@ -34,12 +34,12 @@ export const FooterHeader = ({
         className={className}
       >
         {children}
-      </motion.p>
+      </m.p>
     );
   }
   if (variant === "heroDiv") {
     return (
-      <motion.div
+      <m.div
         key="text"
         initial={{ opacity: 0, x: -40 }}
         animate={{ opacity: 1, x: 0 }}
@@ -48,12 +48,12 @@ export const FooterHeader = ({
         className={className}
       >
         {children}
-      </motion.div>
+      </m.div>
     );
   }
   if (variant === "heroImg") {
     return (
-      <motion.div
+      <m.div
         key="plane"
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
@@ -62,13 +62,13 @@ export const FooterHeader = ({
         className={className}
       >
         {children}
-      </motion.div>
+      </m.div>
     );
   }
   if (variant === "handSpan") {
     return (
-      <motion.span
-      className={className}
+      <m.span
+        className={className}
         style={{ display: "inline-block", fontSize: "1.4rem" }}
         animate={{ rotate: [0, 20, -10, 20, 0] }}
         transition={{
@@ -78,7 +78,7 @@ export const FooterHeader = ({
         }}
       >
         {children}
-      </motion.span>
+      </m.span>
     );
   }
 };
