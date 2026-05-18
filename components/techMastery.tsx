@@ -1,6 +1,6 @@
 "use client";
 
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "motion/react";
 import { Code2, Zap, Cpu, Terminal } from "lucide-react";
 import { memo } from "react";
 

@@ -3,7 +3,7 @@
 import { FaLocationArrow } from "react-icons/fa6";
 import { socialMedia } from "@/_lib/data";
 import MagicButton from "./MagicButton";
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "motion/react";
 import { FooterHeader } from "./ui/animate";
 import Image from "next/image";
 

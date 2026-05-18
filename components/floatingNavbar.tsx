@@ -9,7 +9,7 @@ import {
   useTransform,
   LazyMotion,
   domAnimation,
-} from "framer-motion";
+} from "motion/react";
 import { FiTwitter } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import { CiLight } from "react-icons/ci";

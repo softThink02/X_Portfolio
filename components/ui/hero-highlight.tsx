@@ -1,6 +1,12 @@
 "use client";
 import { cn } from "@/_lib/utils";
-import { useMotionValue, motion, useMotionTemplate } from "motion/react";
+import {
+  useMotionValue,
+  m,
+  useMotionTemplate,
+  LazyMotion,
+  domAnimation,
+} from "motion/react";
 import React from "react";
 
 export const HeroHighlight = ({
@@ -41,7 +47,7 @@ export const HeroHighlight = ({
     <div
       className={cn(
         "group relative flex md:h-[40rem] xl:h-[46rem] h-[40rem] w-full items-center justify-center bg-white dark:bg-black",
-        containerClassName
+        containerClassName,
       )}
       onMouseMove={handleMouseMove}
     >
@@ -57,46 +63,48 @@ export const HeroHighlight = ({
           backgroundImage: dotPatterns.dark.default,
         }}
       />
-      <motion.div
-        className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 dark:hidden"
-        style={{
-          backgroundImage: dotPatterns.light.hover,
-          WebkitMaskImage: useMotionTemplate`
+      <LazyMotion features={domAnimation}>
+        <m.div
+          className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 dark:hidden"
+          style={{
+            backgroundImage: dotPatterns.light.hover,
+            WebkitMaskImage: useMotionTemplate`
             radial-gradient(
               200px circle at ${mouseX}px ${mouseY}px,
               black 0%,
               transparent 100%
             )
           `,
-          maskImage: useMotionTemplate`
+            maskImage: useMotionTemplate`
             radial-gradient(
               200px circle at ${mouseX}px ${mouseY}px,
               black 0%,
               transparent 100%
             )
           `,
-        }}
-      />
-      <motion.div
-        className="pointer-events-none absolute inset-0 hidden opacity-0 transition duration-300 group-hover:opacity-100 dark:block"
-        style={{
-          backgroundImage: dotPatterns.dark.hover,
-          WebkitMaskImage: useMotionTemplate`
+          }}
+        />
+        <m.div
+          className="pointer-events-none absolute inset-0 hidden opacity-0 transition duration-300 group-hover:opacity-100 dark:block"
+          style={{
+            backgroundImage: dotPatterns.dark.hover,
+            WebkitMaskImage: useMotionTemplate`
             radial-gradient(
               200px circle at ${mouseX}px ${mouseY}px,
               black 0%,
               transparent 100%
             )
           `,
-          maskImage: useMotionTemplate`
+            maskImage: useMotionTemplate`
             radial-gradient(
               200px circle at ${mouseX}px ${mouseY}px,
               black 0%,
               transparent 100%
             )
           `,
-        }}
-      />
+          }}
+        />
+      </LazyMotion>
 
       <div className={cn("relative z-20", className)}>{children}</div>
     </div>
@@ -111,7 +119,7 @@ export const Highlight = ({
   className?: string;
 }) => {
   return (
-    <motion.span
+    <m.span
       initial={{
         backgroundSize: "0% 100%",
       }}
@@ -130,10 +138,10 @@ export const Highlight = ({
       }}
       className={cn(
         `relative inline-block rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 px-1 pb-1 dark:from-indigo-500 dark:to-purple-500`,
-        className
+        className,
       )}
     >
       {children}
-    </motion.span>
+    </m.span>
   );
 };
