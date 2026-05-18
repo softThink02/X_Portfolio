@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/_lib/utils";
-import { useMotionValue, motion, useMotionTemplate } from "motion/react";
+import { m, useMotionValue, useMotionTemplate } from "framer-motion";
 import React from "react";
 
 export const HeroHighlight = ({
@@ -57,7 +57,7 @@ export const HeroHighlight = ({
           backgroundImage: dotPatterns.dark.default,
         }}
       />
-      <motion.div
+      <m.div
         className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 dark:hidden"
         style={{
           backgroundImage: dotPatterns.light.hover,
@@ -77,7 +77,7 @@ export const HeroHighlight = ({
           `,
         }}
       />
-      <motion.div
+      <m.div
         className="pointer-events-none absolute inset-0 hidden opacity-0 transition duration-300 group-hover:opacity-100 dark:block"
         style={{
           backgroundImage: dotPatterns.dark.hover,
@@ -111,7 +111,7 @@ export const Highlight = ({
   className?: string;
 }) => {
   return (
-    <motion.span
+    <m.span
       initial={{
         backgroundSize: "0% 100%",
       }}
@@ -134,6 +134,6 @@ export const Highlight = ({
       )}
     >
       {children}
-    </motion.span>
+    </m.span>
   );
 };
