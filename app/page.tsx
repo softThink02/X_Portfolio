@@ -26,14 +26,14 @@ const Home = () => {
       <div className="max-w-7xl w-full">
         <FloatingDockBar />
         <Hero />
+        <About />
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <TechMastery />
         </ErrorBoundary>
-        <About />
+        <Experience />
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <RecentProjects />
         </ErrorBoundary>
-        <Experience />
         <Footer />
       </div>
     </main>
