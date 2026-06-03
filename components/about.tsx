@@ -12,7 +12,7 @@ const About = () => {
         <div className="md:w-[50%] w-full">
           <div className="relative w-full aspect-[3/2] bg-gray-200 overflow-hidden">
             <Image
-              src="https://res.cloudinary.com/dugi9xncx/image/upload/v1779105312/techImage_tmqcph.avif"
+              src="https://res.cloudinary.com/dugi9xncx/image/upload/f_auto,q_auto,w_800/v1779105312/techImage_tmqcph.avif"
               alt="X"
               width={500}
               height={300}
