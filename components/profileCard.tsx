@@ -25,7 +25,7 @@ export default function ProfileCard() {
           className="rounded-full relative w-[140px] h-[140px] md:w-[160px] md:h-[160px] overflow-hidden shadow-[0_0_40px_rgba(147,51,234,0.25)]"
         >
           <Image
-            src="https://res.cloudinary.com/dugi9xncx/image/upload/v1778795082/myEmoji_uu5v2x.jpg"
+            src="https://res.cloudinary.com/dugi9xncx/image/upload/f_auto,q_auto,w_800/v1778795082/myEmoji_uu5v2x.jpg"
             alt="X Avatar"
             fill
             sizes="140px"
